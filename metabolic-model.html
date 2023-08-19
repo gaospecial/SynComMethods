@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>SynComMethods - 6&nbsp; 代谢模型</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ecological-model.html" rel="next">
+<link href="./culture-method.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
+<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./metabolic-model.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">代谢模型</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">SynComMethods</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./write-math-equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">书写数学公式</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./write-chemical-equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">书写化学反应式</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./technical-writing-with-quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto 常用文档元素</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strain-and-combination.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">菌株和组合方式</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">培养方法</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metabolic-model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">代谢模型</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ecological-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">生态模型</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glv-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">gLV 模型</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">参考文献</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-genome-scale-models" id="toc-sec-genome-scale-models" class="nav-link active" data-scroll-target="#sec-genome-scale-models"><span class="header-section-number">6.1</span> Genome-scale Models</a>
+  <ul class="collapse">
+  <li><a href="#sec-fba-analysis-and-its-dynamic-extension" id="toc-sec-fba-analysis-and-its-dynamic-extension" class="nav-link" data-scroll-target="#sec-fba-analysis-and-its-dynamic-extension"><span class="header-section-number">6.1.1</span> 通量平衡分析及其动态扩展</a></li>
+  <li><a href="#sec-sfba-problem-and-recent-progress" id="toc-sec-sfba-problem-and-recent-progress" class="nav-link" data-scroll-target="#sec-sfba-problem-and-recent-progress"><span class="header-section-number">6.1.2</span> SFBA 问题及最新进展</a></li>
+  <li><a href="#sec-three-sfba-examples" id="toc-sec-three-sfba-examples" class="nav-link" data-scroll-target="#sec-three-sfba-examples"><span class="header-section-number">6.1.3</span> SFBA 案例研究</a></li>
+  <li><a href="#comets-模拟合成群落演化" id="toc-comets-模拟合成群落演化" class="nav-link" data-scroll-target="#comets-模拟合成群落演化"><span class="header-section-number">6.1.4</span> COMETS 模拟合成群落演化</a></li>
+  <li><a href="#dfbalab-求解乙醇生物发酵问题" id="toc-dfbalab-求解乙醇生物发酵问题" class="nav-link" data-scroll-target="#dfbalab-求解乙醇生物发酵问题"><span class="header-section-number">6.1.5</span> DFBAlab 求解乙醇生物发酵问题</a></li>
+  <li><a href="#sec-future-perspective-of-sfba" id="toc-sec-future-perspective-of-sfba" class="nav-link" data-scroll-target="#sec-future-perspective-of-sfba"><span class="header-section-number">6.1.6</span> 未来可能的研究方向</a></li>
+  </ul></li>
+  <li><a href="#sec-comets" id="toc-sec-comets" class="nav-link" data-scroll-target="#sec-comets"><span class="header-section-number">6.2</span> COMETS</a>
+  <ul class="collapse">
+  <li><a href="#comets-软件特性" id="toc-comets-软件特性" class="nav-link" data-scroll-target="#comets-软件特性"><span class="header-section-number">6.2.1</span> COMETS 软件特性</a></li>
+  </ul></li>
+  <li><a href="#sec-the-dfbalab-model" id="toc-sec-the-dfbalab-model" class="nav-link" data-scroll-target="#sec-the-dfbalab-model"><span class="header-section-number">6.3</span> 使用 DFBAlab</a></li>
+  <li><a href="#community-simulator" id="toc-community-simulator" class="nav-link" data-scroll-target="#community-simulator"><span class="header-section-number">6.4</span> Community Simulator</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="metabolic-model" class="quarto-section-identifier"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">代谢模型</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-genome-scale-models" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="sec-genome-scale-models"><span class="header-section-number">6.1</span> Genome-scale Models</h2>
+<p>大多数自然微生物系统都是在具有时空变化的环境中进化而来的。理解这种复杂系统的一个主要局限是缺乏数学建模框架，无法将单个物种的基因组和环境的时空变化与系统行为联系起来。时空通量平衡分析（SFBA）将通量平衡分析（FBA）扩展到考虑环境的时空变化，是微生物代谢基因组尺度重建的新兴领域。SFBA 预计是微生物代谢建模的下一个前沿领域，未来的方法开发和系统应用将迅速增加。</p>
+<section id="sec-fba-analysis-and-its-dynamic-extension" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="sec-fba-analysis-and-its-dynamic-extension"><span class="header-section-number">6.1.1</span> 通量平衡分析及其动态扩展</h3>
+<p>通量平衡分析法（FBA）是一种有限描述全细胞代谢的建模方法，该方法的基础是代谢物质量守恒和反应化学计量学。因为化学计量学模型描述了通过纳入基因组中注释的生化反应来构建的代谢通路，由此产生的模型通常被称为基因组尺度代谢（GSM）模型。</p>
+<p>给定化学计量矩阵和一组指定的可用养分吸收率，目标是求解未知细胞内反应速率（即细胞内通量）和代谢副产物分泌速率（即分泌通量）的 GSM。由于比起质量平衡方程，化学计量方程总是包含更多的未知通量，因此 GSM 有无限多的解，通量分布无法唯一确定。为了克服这一局限性，假定细胞新陈代谢受到调节，以实现某种细胞目标。最常见的目标是最大限度地生长，由此就将生物代谢物（如 RNA、DNA、蛋白质、碳水化合物等）的化学计量方程结合了起来，产生一个线性规划（LP）问题，通过有效求解，可预测细胞内通量分布、吸收和分泌（交换）通量以及生长率（ <a href="#fig-genome-scale-fba">Figure&nbsp;<span>6.1</span></a> ）。</p>
+<div id="fig-genome-scale-fba" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://port.silverchair-cdn.com/port/content_public/journal/biochemsoctrans/43/6/10.1042_bst20150146/2/m_bst0431164fig1.jpeg?Expires=1694421452&amp;Signature=Ba584bo2Hgt7tEz7u1cZ-0zSZhZTe4fh~Q8kExISppMoVep3pgL8noo6semqrlwNV7MNTA6O0ZfD57mTtiUYCLemk0OWVAaptJd3YDIIsBvjolKA8rUihh5~rAyLeJL0x2Ld1L0Kr1lWuGiF8mXKc4pI~zVc0Z5Akm1hFM3oAn4qGbKi5plpUuQTEjHruuiWBHANJ5SAwiUnWZy6RYeJCu7bgjgrpLKmk5dYUEwB8Z5CJVWzfAENqf4zTSGFbpJtXl8hFB~PBGhSN~dTE26jHwlb7tOMXz6eynKuO7MuK~fSyc768bXqZjRNUxmvVqVTc6Q0oqRT0j0n32lPf4yGvg__&amp;Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.1: <strong>基因组尺度通量分析方法</strong>。GSM 构建了一个线性回归问题，利用化学计量矩阵 <span class="math inline">\(A\)</span>、生物量组成权重 <span class="math inline">\(w\)</span>、通量 <span class="math inline">\(v_{min}\)</span> 和 <span class="math inline">\(v_{max}\)</span> 边界以及养分吸收率的指定边界计算未知通量 <span class="math inline">\(v\)</span>。在这个具体例子中，葡萄糖（<span class="math inline">\(g\)</span>）和氧气（<span class="math inline">\(o\)</span>）是限制生长的营养物质，乙醇（<span class="math inline">\(e\)</span>）是主要的代谢副产品。根据指定的两种营养物质的通量界限（<span class="math inline">\(v_{g,min}\)</span>, <span class="math inline">\(v_{o,min}\)</span>），计算出细胞生长率（<span class="math inline">\(μ\)</span>）、实际营养物质吸收率（<span class="math inline">\(v_g\)</span>, <span class="math inline">\(v_o\)</span>）和乙醇分泌率（ <span class="math inline">\(v_e\)</span>）。<span class="citation" data-cites="hensonGenomescaleModellingMicrobial2015">(<a href="references.html#ref-hensonGenomescaleModellingMicrobial2015" role="doc-biblioref">Henson 2015</a>)</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-sfba-problem-and-recent-progress" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="sec-sfba-problem-and-recent-progress"><span class="header-section-number">6.1.2</span> SFBA 问题及最新进展</h3>
+<p>FBA 所依据的假设是细胞内代谢和细胞外环境都是时间不变的。动态 FBA（DFBA）则通过扩展取消了细胞外环境的稳态假设<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。DFBA 模型是在细胞迅速适应环境变化的假设条件下，将细胞内代谢的 GSM 与生长限制性营养物质吸收率的动力学表达式以及细胞生物量、限制性营养物质和分泌的代谢副产物的动态质量平衡方程相结合而形成的（ <a href="#fig-genome-scale-dfba">Figure&nbsp;<span>6.2</span></a> ）。DFBA 的一个主要优点是：模型输出包括<strong>生物量</strong>和<strong>细胞外代谢物浓度</strong>，而不像 FBA 那样只包括生长速率和交换通量。此外，对细胞外浓度和细胞内通量的预测具有时间分辨率。</p>
+<div id="fig-genome-scale-dfba" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://port.silverchair-cdn.com/port/content_public/journal/biochemsoctrans/43/6/10.1042_bst20150146/2/m_bst0431164fig2.jpeg?Expires=1694421452&amp;Signature=1Uw~YThMi1LBZUEXO7Lm7wgGsaVDXkLKJKxiZBfBbrTJA8STCjzUfGqaB698lYfW39KHI6RW9E3QDgiPWeJuSSX5fmAyGbwvrsuIxUM2Uf8DX4HPYiS4SM8EEHIyIX7HOnaVAJ0qrbcxragGNuXZiEbxt1u6e8W8zN-I4agCreVGx0~qHO6XVNLso-5NpFEBcyheI7bMV9P2umDW587z77HaLGr0IrNOV4wRRQ9jqbSPy1O7GxYVZADpcgCFXrKVU9kgn3kyg1cKeME6GuY2qgSkDV8al3LrBk8jsqQUmsbqjGxnmf~YNfUHJBRTMy1UBBkz1k4tI20Xy2Eru~rbow__&amp;Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.2: 基因组尺度 DFBA 在细胞内动力学比细胞外动力学快的假设条件下，使用 GSM 进行 FBA，以预测生长率、养分吸收率和副产物分泌率。FBA 通量可作为细胞外环境常微分方程（Ordinary Differential Equation，ODE）的输入，经整合后可对生物量、营养物质和副产物浓度进行时间分辨预测。这些浓度可作为养分吸收动力学的输入，用于计算 FBA 问题中养分吸收率的传输边界。本例中，葡萄糖（ <span class="math inline">\(g\)</span>）和氧气（ <span class="math inline">\(o\)</span>）是限制生长的养分，乙醇（ <span class="math inline">\(e\)</span>）是主要代谢副产物，其中 <span class="math inline">\(X\)</span>、<span class="math inline">\(G\)</span>、<span class="math inline">\(E\)</span> 和 <span class="math inline">\(O\)</span> 分别为生物量、葡萄糖、乙醇和氧气浓度。<span class="citation" data-cites="hensonGenomescaleModellingMicrobial2015">(<a href="references.html#ref-hensonGenomescaleModellingMicrobial2015" role="doc-biblioref">Henson 2015</a>)</span></figcaption>
+</figure>
+</div>
+<p>尽管 DFBA 考虑了细胞外动态对细胞内代谢的影响，但该方法是基于细胞外环境混合良好且空间均匀的假设。同时考虑空间和时间变化的数学模型通常称为<strong>时空模型</strong>。我们把包括环境空间异质性的 DFBA 扩展称为时空 FBA（Spatiotemporal FBA，SFBA）。</p>
+<p><strong>SFBA 中用随时间和空间坐标变化的偏微分方程（Partial Differential Equations，PDEs）取代了 DFBA 中的随时间变化的 ODEs</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>。偏微分方程表示生物量、代谢物和可能的其他化学物种浓度的细胞外质量平衡方程，并说明引起空间变化的传输机制，通常包括代谢物扩散和液相/气相对流。必须在空间域的边界施加边界条件，以确保 PDE 得到良好的拟合。与 DFBA 一样，GSM 和细胞外质量平衡方程通过养分吸收动力学联系在一起。</p>
+<p>营养物质和代谢产物在生物膜不同位置存在异质性。而且，由于细胞的生长和/或死亡，空间异质性可能会随着时间的变化。为便于说明，考虑厚度固定为 <span class="math inline">\(L\)</span> 的单一物种生物膜中，底部（ <span class="math inline">\(z=0\)</span> ）有单一限制生长的营养物质，顶部（ <span class="math inline">\(z=L\)</span> ）有单一合成的副产品排出。假设空间变化只发生在生物膜的轴向 <span class="math inline">\(z\)</span>，描述生物膜扩散过程的 PDE 可写成以下形式：</p>
+<p><span class="math display">\[
+\begin{eqnarray}
+\begin{array}{llll}
+\frac {\partial X(z,t)}{\partial t} = \mu X \qquad &amp;  X(z, 0) = X_I \\
+\frac {\partial S(z, t)}{\partial t} = \upsilon_S X + D_S \frac {\partial^2S}{\partial z^2} \qquad &amp; S(0,t) = S_0 \quad &amp; \frac {\partial S(L,t)}{\partial z} = 0 \quad &amp; S(z,0) = S_I \\
+\frac {\partial P(z,t)}{\partial t} = v_P X + D_P \frac {\partial ^2 P}{\partial z^2} \qquad &amp; \frac{\partial P(0,5)}{\partial z}=0 \quad &amp; P(z,t)=0 \quad &amp; P(z,0)=P_I
+\end{array}
+\end{eqnarray}
+\]</span></p>
+<p>这里的 <span class="math inline">\(X(z,t)\)</span>、<span class="math inline">\(S(z,t)\)</span> 和 <span class="math inline">\(P(z,t)\)</span> 分别表示在 <span class="math inline">\(z\)</span> 处和时间 <span class="math inline">\(t\)</span> 的生物量、底物浓度和副产物浓度。通过求解 GSM 可以得到生长率 <span class="math inline">\(μ\)</span>、底物吸收率 <span class="math inline">\(v_S\)</span> 和副产物合成率 <span class="math inline">\(v_P\)</span>。基质和副产物分别以高效扩散系数 <span class="math inline">\(D_S\)</span> 和 <span class="math inline">\(D_P\)</span> 在生物膜中扩散，而生物质被假定为无运动性。第二栏列出了生物膜底部的边界条件，其假设条件是：基质的浓度为 <span class="math inline">\(S0\)</span>，生物质和副产物不会穿过该边界。第三列生物膜顶部的边界条件是基于以下假设：生物质和基质不会流过该边界，而副产品的去除率足够高，以至于边界浓度为零。最后，第四栏中的初始条件是基于生物膜在 <span class="math inline">\(t=0\)</span> 时空间均匀的假设。</p>
+<p>SFBA 模型由描述细胞外环境的 PDE 和描述细胞内代谢的 LP 组成。纯物种系统只有一个 LP ，而多物种系统则需要求解每个物种的 LP。由于没有直接求解这种混合 PDE-LP 模型的计算方法，因此必须以某种方式近似 PDE 的传输行为，以生成可求解的模型。<a href="#fig-genome-scale-sfba">Figure&nbsp;<span>6.3</span></a></p>
+<div id="fig-genome-scale-sfba" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="https://port.silverchair-cdn.com/port/content_public/journal/biochemsoctrans/43/6/10.1042_bst20150146/2/m_bst0431164fig4.jpeg?Expires=1694421452&amp;Signature=cQfcYMyChqIHk3KT3wM0rg7NuakOMJYpldTpyGUWI~tS3b~hEBH0hzZYkFRzafDOMoLFd5E59bgQc9xTQj-HC6oeQWWQK3fZF85r40KC2IotdCKNBVmopxDX99TN1V6dbqUGw0bGBnVSzLlpr5BZlX0CMVqmFU2ozC8p0G5QHd6GU875x-kwamNkDNvUtyRTO60jYl43lxFjs2HZ9Jp4Pia8oZhGgABf~Ut-5~c1jxZSxk6XvdEv64E9Z7pz4i4Lg7dE-J1yMgQS3lWPsdsopQpb0ClYA80l1uxov8VHrCF~PHP-0EyCXVn9nPgvRsET12lq5oBg~EXO6DVUVLwNuQ__&amp;Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Figure&nbsp;6.3: <strong>基因组尺度 SFBA</strong>。具有时空变化的微生物系统由一个时空模型来描述，该模型考虑了系统内的相关迁移过程。假定空间变化仅限于单一方向 <span class="math inline">\(z\)</span>，则根据物种浓度（ <span class="math inline">\(X_i\)</span>）、液相代谢物浓度（ <span class="math inline">\(M_j\)</span>）和气相代谢物浓度（<span class="math inline">\(Pj\)</span>）编写 PDEs。利用参与物种的 GSM 进行 FBA，以预测生长率、营养吸收率和副产物分泌率。通过对 PDEs 进行空间离散化处理，可以得到一大组带有嵌入式 LPs 的 ODEs，使用 MATLAB 软件包 DFBAlab 对这些 ODEs 进行求解，从而得出时间和空间分辨率预测结果。</figcaption>
+</figure>
+</div>
+</section>
+<section id="sec-three-sfba-examples" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="sec-three-sfba-examples"><span class="header-section-number">6.1.3</span> SFBA 案例研究</h3>
+</section>
+<section id="comets-模拟合成群落演化" class="level3" data-number="6.1.4">
+<h3 data-number="6.1.4" class="anchored" data-anchor-id="comets-模拟合成群落演化"><span class="header-section-number">6.1.4</span> COMETS 模拟合成群落演化</h3>
+<p>2014 年发表在 Cell Reports 上的研究开发了 COMETS 的时空建模框架<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>，并将其用于研究二物种和三物种合成群落的涌现性行为<span class="citation" data-cites="harcombe2014">(<a href="references.html#ref-harcombe2014" role="doc-biblioref">Harcombe et al. 2014</a>)</span>。COMETS 定义了一个二维网格（2D lattice），网格中的每个方格（box）代表一个不同的空间位置。假定每个物种都有可能根据相同的吸收动力学消耗可用碳源，则可使用参与物种的 GSM 解决每个方格的独立 DFBA 问题。采用了一种顺序求解策略，即先求解物种 LP，以生成本地生长速率和通量，然后在一个固定的时间步长内将细胞外 ODE 与这些恒定的 LP 求解进行整合，以生成本地生物量和代谢物浓度。在求解 LP 开始下一次迭代之前，在同一时间步长内求解二维扩散方程，以允许物种细胞质量和代谢物在方格之间扩散。</p>
+<div class="quarto-video"><video id="video_shortcode_videojs_video1" class="video-js vjs-default-skin vjs-fluid" controls="" preload="auto" data-setup="{}" title="COMETS Video Abstract"><source src="https://ars.els-cdn.com/content/image/1-s2.0-S2211124714002800-mmc3.mp4"></video></div>
+<p>研究使用 COMETS 模拟了由沙门氏菌和大肠杆菌组成的合成群落中的特定代谢物互养过程。该时空模型能够重现实验结果，即两种生物稳定共存，并收敛到大肠杆菌种群比例占 79% 的结局，且与初始比例无关。模拟由沙门氏菌、大肠杆菌和外生甲基杆菌组成的三物种合成群落也得到了类似的结果。双物种系统用于研究空间结构的影响。该模型正确地预测出，随着两个物种接种的距离越远，群落的生长速度就会越慢，这是由于交叉喂养的代谢物的扩散限制所致。此外，该模型还再现了实验结果，即在沙门氏菌和大肠杆菌种群之间放置第二个基因工程沙门氏菌菌落会促进群落生长，但放置不需要大肠杆菌交叉喂养代谢物的野生型沙门氏菌则会降低群落生长。</p>
+</section>
+<section id="dfbalab-求解乙醇生物发酵问题" class="level3" data-number="6.1.5">
+<h3 data-number="6.1.5" class="anchored" data-anchor-id="dfbalab-求解乙醇生物发酵问题"><span class="header-section-number">6.1.5</span> DFBAlab 求解乙醇生物发酵问题</h3>
+<blockquote class="blockquote">
+<p>来源：<span class="citation" data-cites="chen2015">(<a href="references.html#ref-chen2015" role="doc-biblioref">Chen et al. 2015</a>)</span></p>
+</blockquote>
+<p>预测了厌氧梭菌在垂直气泡塔反应器中将合成气（<span class="math inline">\(\ce{CO}\)</span>、<span class="math inline">\(\ce{H2}\)</span>）转化为乙醇的情况。合成气和液体介质进料流被引入气泡塔底部，并以不同的速度沿气泡塔向上流动，由于细胞生长和气体耗竭，产生了较大的空间梯度。代谢副产物乙醇和乙酸酯在从塔顶流出的液相流中回收。时空代谢模型由已发表的 <em>C. ljungdahlii</em> GSM [69]、<span class="math inline">\(\ce{CO}\)</span> 和 <span class="math inline">\(\ce{H2}\)</span> 的 Michaelis-Menten 吸收动力学以及 <em>C. ljungdahlii</em> 生物质、液相 <span class="math inline">\(\ce{CO}\)</span>、<span class="math inline">\(\ce{H2}\)</span>、乙醇和乙酸盐以及气相 <span class="math inline">\(\ce{CO}\)</span> 和 <span class="math inline">\(\ce{H2}\)</span> 的反应对流型 PDEs 组成。这些 PDE 被离散化为 100 个空间结点，并在每个结点使用六个 LP 进行词法优化，以确保交换通量的唯一性。由 900 个时间 ODE 和 600 个 LP 组成的大型离散模型在 MATLAB（MathWorks）中使用 DFBAlab（DFBA 实验室）工具进行了有效求解（ <a href="#fig-genome-scale-sfba">Figure&nbsp;<span>6.3</span></a> ）。</p>
+<p>针对各种色谱柱操作条件和养分吸收参数进行的动态模拟，得出了与现有实验一致的色谱柱行为和乙醇生产瓶颈预测，这些实验包括：（1）典型的富含 <span class="math inline">\(\ce{CO}\)</span> 的合成气会在塔的上部由于 <span class="math inline">\(\ce{H2}\)</span> 耗竭而产生大量醋酸盐，这表明增加合成气进料中的 <span class="math inline">\(\ce{H2}\)</span> 可能是有益的；（2）高效的气液传质是实现高乙醇产量和高转化率的关键，这表明需要继续开发先进的气泡塔设计，以实现极高的气液传质速率；以及 （3）提高 <span class="math inline">\(\ce{H2}\)</span> 的吸收率可大幅提高乙醇滴度和乙醇-醋酸盐比率，这表明通过改良 <em>C. ljungdahlii</em> 的工程设计提高 <span class="math inline">\(\ce{H2}\)</span> 的吸收率可实现高乙醇产量和高转化率。</p>
+</section>
+<section id="sec-future-perspective-of-sfba" class="level3" data-number="6.1.6">
+<h3 data-number="6.1.6" class="anchored" data-anchor-id="sec-future-perspective-of-sfba"><span class="header-section-number">6.1.6</span> 未来可能的研究方向</h3>
+<p>基因组尺度模型是生物体已知或推断的代谢网络的数学表示[72]。利用基因组尺度模型进行模拟，可预测生物体如何利用环境中的特定资源进行生长，以及由于分泌、细胞外降解或泄漏而产生的任何新的代谢物（图 2）。因此，利用多个生物体的模型进行模拟（通过将数字生命体视为独立的组件来进行），可以对资源竞争、生态位划分或代谢交叉喂养进行定量预测，并已应用于多种系统，包括人类肠道微生物群73、74、75。<span class="citation" data-cites="pachecoResolvingMetabolicInteraction2023">(<a href="references.html#ref-pachecoResolvingMetabolicInteraction2023" role="doc-biblioref">Pacheco and Vorholt 2023</a>)</span></p>
+<p>在活体植物中，将基因组尺度模型的预测结果与合成群落实验相结合，为了解更复杂的代谢相互作用的复杂性提供了一条特别有前途的途径[27]。例如，这种综合方法最近揭示了从杨树根瘤中分离出来的细菌群落稳定性的代谢因素[76]。此外，在空间范围内模拟代谢相互作用的新方法 77、78 可以预测多物种在环境中的相互作用，这种环境近似于与植物相关的微环境 79、80、81 中与空间和时间相关的资源条件。高通量培养技术[82]、代谢组学技术[83]和可视化技术[84]的进步也有望提高更复杂群落尺度下相互作用预测的准确性。<span class="citation" data-cites="pachecoResolvingMetabolicInteraction2023">(<a href="references.html#ref-pachecoResolvingMetabolicInteraction2023" role="doc-biblioref">Pacheco and Vorholt 2023</a>)</span></p>
+<p>值得注意的是，Borer 等人最近利用了这一技术组合，他们使用经过实验验证的四种特征良好菌株的基因组尺度模型来预测土壤细菌之间的群落组装和代谢交换<span class="citation" data-cites="borerPrimaryCarbonSources2022">(<a href="references.html#ref-borerPrimaryCarbonSources2022" role="doc-biblioref">Borer, Kleyer, and Or 2022</a>)</span>。这项研究进一步突出了基因组尺度模型描述空间分辨环境中相互作用机制的能力，表明预测复杂环境中群落生态学的潜力越来越大。</p>
+</section>
+</section>
+<section id="sec-comets" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="sec-comets"><span class="header-section-number">6.2</span> COMETS</h2>
+<p><a href="https://segrelab.github.io/comets-manual/">COMETS</a>(Computation Of Microbial Ecosystems in Time and Space) is a software platform for performing computer simulations of spatially structured microbial communities. It is based on stoichiometric modeling of the genome-scale metabolic network of individual microbial species using dynamic flux balance analysis, and on a discrete approximation of diffusion. For more information, see <a href="http://www.cell.com/cell-reports/abstract/S2211-1247(14)00280-0">Harcombe et al., Metabolic Resource Allocation in Individual Microbes Determines Ecosystem Interactions and Spatial Dynamics, Cell Reports, 2014</a>.</p>
+<section id="comets-软件特性" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="comets-软件特性"><span class="header-section-number">6.2.1</span> COMETS 软件特性</h3>
+<p>COMETS 的核心是通过迭代方式最大化目标反应（通常是生物量生产）来模拟微生物种群的生长。一个或多个物种的初始生物量（由其代谢模型定义）被播种到含有一系列指定营养物质的环境中。在每次迭代中，生物量和环境都会根据 FBA 预测进行更新。</p>
+<section id="空间能力" class="level4" data-number="6.2.1.1">
+<h4 data-number="6.2.1.1" class="anchored" data-anchor-id="空间能力"><span class="header-section-number">6.2.1.1</span> 空间能力</h4>
+<p>COMETS 能够模拟空间结构环境中的微生物生长。这是通过将模拟空间（“世界”）划分为由较小空间组成的 “网格”来实现的。在每个空间内，生长被认为是充分混合的。随着模拟的进行，营养物质和生物量都可以传播到连续的空间。</p>
+<ul>
+<li><p>模拟二维和三维 “世界”</p>
+<p>除了混合良好的条件外，COMETS 还能模拟二维和三维空间结构环境。例如，可以模拟培养皿等二维表面上的菌落生长，或肿瘤、三维基质中的细菌菌落等三维结构。</p></li>
+<li><p>生物质在空间的扩散和对流传播</p>
+<p>在具有空间结构的模拟中，可以实现不同的生物质传播模式。扩散模式模拟的是自由游动细菌的传播，而对流模式模拟的是细菌相互推动的传播。这两种传播模式可以结合使用。</p></li>
+<li><p>取决于基质的营养物质和生物量传播</p>
+<p>营养物质的扩散性和生物质的传播特性取决于琼脂密度、细胞基质摩擦系数等基质特性。</p></li>
+<li><p>边界条件</p>
+<p>有两种边界条件。固定值和固定源或汇速率。</p></li>
+</ul>
+</section>
+<section id="生物功能" class="level4" data-number="6.2.1.2">
+<h4 data-number="6.2.1.2" class="anchored" data-anchor-id="生物功能"><span class="header-section-number">6.2.1.2</span> 生物功能</h4>
+<p>COMETS 具有许多有趣的生物功能，可用于完善和改进化学计量模型的预测，以及模拟不同类型的生物现实条件。</p>
+<ul>
+<li><p>微生物生长的滞后期</p>
+<p>滞后期是模拟菌落生长激活的模型。</p></li>
+<li><p>连续（恒温箱）和批量生长模式</p>
+<p>在恒温箱模式下，用户可控制营养液的补充速度。在批处理模式下，用户可控制稀释和频率。</p></li>
+<li><p>多物种群落模拟</p>
+<p>可在物种空间分布重叠或不重叠的情况下，或在混合良好的条件下，对两个或多个物种（最多可达数百个）进行模拟。</p></li>
+<li><p>解析性 dFBA</p>
+<p>通常，任何代谢模型都有多个最优解。在这些方案中进行选择的一种方法是假设细胞将通过代谢网络的总通量最小化。为此，解析式 FBA 首先优化目标函数，如生长。然后进行第二次优化，将生长量固定在之前获得的最佳水平，并使通过网络的总通量最小化。</p></li>
+<li><p>细胞死亡</p>
+<p>我们采用了一个简单的细胞死亡模型，并为每个物种分配了死亡率。</p></li>
+<li><p>中性种群漂移</p>
+<p>人口噪声的存在会导致模拟中不同物种丰度的随机变化。这在批量增长模式中尤其有用，因为稀释瓶颈会对增长中的种群产生重大影响。</p></li>
+<li><p>进化过程</p>
+<p>Comets 支持进化模拟，包括模拟过程中的随机变异和漂移。目前，唯一可用的突变是反应删除。</p></li>
+</ul>
+</section>
+<section id="计算能力" class="level4" data-number="6.2.1.3">
+<h4 data-number="6.2.1.3" class="anchored" data-anchor-id="计算能力"><span class="header-section-number">6.2.1.3</span> 计算能力</h4>
+<p>COMETS 软件使用 JAVA 语言实现。因此，它具有很强的可移植性，不受操作系统的影响。COMETS 具有以下模拟功能。</p>
+<ul>
+<li><p>图形用户界面 (GUI)</p>
+<p>除命令行外，COMETS 仿真还可通过图形用户界面（包括可视化工具）运行。</p></li>
+<li><p>并行 dFBA</p>
+<p>在多 CPU 系统中以多线程进程方式运行，可获得更高的计算性能。</p></li>
+<li><p>MATLAB 工具箱</p>
+<p>MATLAB 工具箱，用于以编程方式修改 COMETS 的输入文件。</p></li>
+<li><p>Python 工具箱</p>
+<p>Python 工具箱，用于以编程方式修改 COMETS 的输入文件。</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="sec-the-dfbalab-model" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="sec-the-dfbalab-model"><span class="header-section-number">6.3</span> 使用 DFBAlab</h2>
+<p><strong>Write a dFBA model</strong></p>
+<p>Dynamic flux balance analysis is an extension of FBA that has the advantage that it enables analysis of interactions between the metabolism and the environment. The structure of the dFBA model that is assumed here has the following elements:</p>
+<ul>
+<li>A flux balance model of each of the microorganisms.</li>
+<li>A list of external metabolites.</li>
+<li>Description of the interaction between FBA models through uptake and production of external metabolites.</li>
+<li>The dynamic equations that are integrated by DFBAlab.</li>
+</ul>
+<p><img src="https://yoric.mit.edu/sites/default/files/images/CodeCogsEqn.png" id="fig-dfbalab-equation" class="img-fluid"></p>
+<p>where <span class="math inline">\(N\)</span> is the number of biological species and <span class="math inline">\(M\)</span> is the number of extracellular chemical species. The variable <span class="math inline">\(x_j\)</span> is the biomass concentration of the <span class="math inline">\(j^{th}\)</span> metabolism, <span class="math inline">\(s_i\)</span> is the extracellular concentration of the <span class="math inline">\(i^{th}\)</span> chemical species, <span class="math inline">\(F_{in} = \sum_{i=1}^{M}F_{i} (t)\)</span> with <span class="math inline">\(F_i\)</span> is the feed rate of chemical species <span class="math inline">\(i\)</span>, <span class="math inline">\(D=\sum_{i=1}^{M}F_i /V\)</span> is the dilution rate, <span class="math inline">\(v_i^j\)</span> is the uptake or production rate of chemical species <span class="math inline">\(i\)</span> due to species <span class="math inline">\(j\)</span> and <span class="math inline">\(V\)</span> is the volume of the bio-reactor. If the function <span class="math inline">\(v_i^j\)</span> describes the production rate of the <span class="math inline">\(i^{th}\)</span> external metabolite by the <span class="math inline">\(j^{th}\)</span> metabolism, then its value can be determined by secondary optimization for the production rate.</p>
+<p><strong>Setup the simulation</strong></p>
+<p>The simulation parameters are determined by the batch conditions of the experiments. A minimal set of parameter consists of</p>
+<ul>
+<li>The (maximal) batch time.</li>
+<li>The initial conditions for the biomass, substrates and total volume.</li>
+<li>Definition of the external control inputs such as feed rate and composition and other environmental changes that are should be implemented during the batch.</li>
+<li>Optional definition of minimal growth conditions to determine when the simulation should stop prior to reaching the final batch time.</li>
+</ul>
+</section>
+<section id="community-simulator" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="community-simulator"><span class="header-section-number">6.4</span> Community Simulator</h2>
+<blockquote class="blockquote">
+<p>Citation: Marsland R, Cui W, Goldford J, Mehta P (2020) The Community Simulator: A Python package for microbial ecology. PLoS ONE 15(3): e0230430. https://doi.org/10.1371/journal.pone.0230430</p>
+</blockquote>
+<p><a href="https://github.com/Emergent-Behaviors-in-Biology/community-simulator">Community Simulator</a> is a Python package called Community Simulator for simulating microbial population dynamics in a reproducible, transparent and scalable way.</p>
+<p>The Community Simulator includes five major elements: tools for preparing the initial states and environmental conditions for a set of samples, automatic generation of dynamical equations based on a dictionary of modeling assumptions, random parameter sampling with tunable levels of metabolic and taxonomic structure, parallel integration of the dynamical equations, and support for metacommunity dynamics with migration between samples.</p>
+<p>This package is designed for simulating batch culture experiments on complex microbial communities. The architecture is based on the standard protocol for these experiments:</p>
+<ul>
+<li><p>Add media to each of the wells in a 96-well plate. It could be the same media for all wells, or different media for each well, depending on what the experimenter is trying to test.</p></li>
+<li><p>Add a small sample of an existing bacterial culture to each of the wells. Again, these could be the same for all wells, or different initial conditions could be tested in parallel.</p></li>
+<li><p>Let the bacteria grow while stirring or shaking for some fixed time T.</p></li>
+<li><p>Pipette a small fraction of each of the wells into a well on a new plate, with fresh media (added according to the same protocol as in step 1).</p></li>
+<li><p>Repeat the previous two steps as many times as desired.</p></li>
+</ul>
+<p>Communities can also be run in chemostat mode, where nutrients are continually supplied and populations continuously diluted.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-borerPrimaryCarbonSources2022" class="csl-entry" role="listitem">
+Borer, Benedict, Hannah Kleyer, and Dani Or. 2022. <span>“Primary Carbon Sources and Self-Induced Metabolic Landscapes Shape Community Structure in Soil Bacterial Hotspots.”</span> <em>Soil Biology and Biochemistry</em> 168 (May): 108620. <a href="https://doi.org/10.1016/j.soilbio.2022.108620">https://doi.org/10.1016/j.soilbio.2022.108620</a>.
+</div>
+<div id="ref-chen2015" class="csl-entry" role="listitem">
+Chen, Jin, Jose A. Gomez, Kai Höffner, Paul I. Barton, and Michael A. Henson. 2015. <span>“Metabolic Modeling of Synthesis Gas Fermentation in Bubble Column Reactors.”</span> <em>Biotechnology for Biofuels</em> 8 (1). <a href="https://doi.org/10.1186/s13068-015-0272-5">https://doi.org/10.1186/s13068-015-0272-5</a>.
+</div>
+<div id="ref-harcombe2014" class="csl-entry" role="listitem">
+Harcombe, William&nbsp;R., William&nbsp;J. Riehl, Ilija Dukovski, Brian&nbsp;R. Granger, Alex Betts, Alex&nbsp;H. Lang, Gracia Bonilla, et al. 2014. <span>“Metabolic Resource Allocation in Individual Microbes Determines Ecosystem Interactions and Spatial Dynamics.”</span> <em>Cell Reports</em> 7 (4): 1104–15. <a href="https://doi.org/10.1016/j.celrep.2014.03.070">https://doi.org/10.1016/j.celrep.2014.03.070</a>.
+</div>
+<div id="ref-hensonGenomescaleModellingMicrobial2015" class="csl-entry" role="listitem">
+Henson, Michael A. 2015. <span>“Genome-scale modelling of microbial metabolism with temporal and spatial resolution.”</span> <em>Biochemical Society Transactions</em> 43 (6): 1164–71. <a href="https://doi.org/10.1042/BST20150146">https://doi.org/10.1042/BST20150146</a>.
+</div>
+<div id="ref-pachecoResolvingMetabolicInteraction2023" class="csl-entry" role="listitem">
+Pacheco, Alan R., and Julia A. Vorholt. 2023. <span>“Resolving Metabolic Interaction Mechanisms in Plant Microbiomes.”</span> <em>Current Opinion in Microbiology</em> 74 (August): 102317. <a href="https://doi.org/10.1016/j.mib.2023.102317">https://doi.org/10.1016/j.mib.2023.102317</a>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>取消细胞内稳态假设需要结合酶动力学，更加困难。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>常微分方程与偏微分方程中独立变量的数量不同，ODEs（常微分方程）是描述一个独立变量的函数与其导数之间的关系的方程。这个独立变量通常是一维的，例如时间，因此ODEs描述的是一个变量随时间的变化。而 PDEs（偏微分方程）涉及多个独立变量。这些变量可以是多维空间中的位置坐标，因此PDEs描述的是多个变量在空间中的分布以及这些变量随时间的演化。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>该文章中详细描述了下载，仿真的过程。不过没有完整的代码，需要参考 COMETS 的手册自己编写。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./culture-method.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">培养方法</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./ecological-model.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">生态模型</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>videojs(video_shortcode_videojs_video1);</script>
+
+
+
+</body></html>

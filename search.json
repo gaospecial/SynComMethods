@@ -1,0 +1,394 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "SynComMethods",
+    "section": "",
+    "text": "前言\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n本书收集整理”合成菌群”研究相关的理论和方法。\n理论部分\n实验部分"
+  },
+  {
+    "objectID": "index.html#sec-notation",
+    "href": "index.html#sec-notation",
+    "title": "SynComMethods",
+    "section": "符号定义",
+    "text": "符号定义\nUnless specified or for obvious exceptions, Greek letters stand for scalars (i.e., real or complex numbers), lower case Roman letters for vectors, and capital Roman letters for matrices (as such \\(a_i\\) or \\(A_{ij}\\) are scalars). We typically work in \\(\\mathbb{R}^n\\) (the \\(n\\)-dimensional Euclidean space), \\(\\mathbb{R}^n_+\\) (i.e., the positive orthant of \\(\\mathbb{R}^n\\)), or \\(\\mathbb{R}^n_{0+}\\) (non-negative orthant). \\(D(x)\\) is a diagonal matrix with \\(x\\) on the diagonal. The matrix \\(A^T\\) is the transpose of \\(A\\). Whenever it is clear what I mean, I will drop the dependency on time of certain variables.\n希腊字母表示标量(即实数或复数)，小写罗马字母表示向量，大写罗马字母表示矩阵（如 \\(a_i\\)，\\(A_{ij}\\) 是标量）。我们通常工作在 \\(n\\) 维欧几里得空间 \\(\\mathbb{R}^n\\)。\\(D(x)\\) 表示一个正交矩阵，其中 \\(x\\) 是对角线的元素。\\(A^T\\) 表示矩阵的转置。如果不会引起歧义的话，自变量 \\(t\\) 会被舍去。1\nThe Generalized Lotka-Volterra model:\n\\[\n\\dfrac{d x_i(t)}{d t} = x_i(t) \\left(a_i + \\sum_{j} B_{ij} x_j(t) \\right)\n\\]\ncan be written in compact form as:\n\\[\n\\dfrac{d x}{d t} = D(x) (a + B x)\n\\]"
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "SynComMethods",
+    "section": "",
+    "text": "这段定义在 Theoretical Community Ecology 书中定义。↩︎"
+  },
+  {
+    "objectID": "write-math-equation.html#希腊字母",
+    "href": "write-math-equation.html#希腊字母",
+    "title": "1  书写数学公式",
+    "section": "1.1 希腊字母",
+    "text": "1.1 希腊字母\n\n\n\n序号\n标准符号\nLaTeX\n首字母大写\nLaTeX\n\n\n\n\n1\n\\(\\alpha\\)\n\\alpha\n\n\n\n\n2\n\\(\\beta\\)\n\\beta\n\n\n\n\n3\n\\(\\gamma\\)\n\\gamma\n\\(\\Gamma\\)\n\\Gamma\n\n\n4\n\\(\\delta\\)\n\\delta\n\\(\\Delta\\)\n\\Delta\n\n\n5\n\\(\\epsilon\\)\n\\epsilon\n\n\n\n\n6\n\\(\\zeta\\)\n\\zeta\n\n\n\n\n7\n\\(\\eta\\)\n\\eta\n\n\n\n\n8\n\\(\\theta\\)\n\\theta\n\\(\\Theta\\)\n\\Theta\n\n\n9\n\\(\\iota\\)\n\\iota\n\n\n\n\n10\n\\(\\kappa\\)\n\\kappa\n\n\n\n\n11\n\\(\\lambda\\)\n\\lambda\n\\(\\Lambda\\)\n\\Lambda\n\n\n12\n\\(\\mu\\)\n\\mu\n\n\n\n\n13\n\\(\\nu\\)\n\\nu\n\n\n\n\n14\n\\(\\xi\\)\n\\xi\n\\(\\Xi\\)\n\\Xi\n\n\n15\n\\(o\\)\no\n\\(O\\)\nO\n\n\n16\n\\(\\pi\\)\n\\pi\n\\(\\Pi\\)\n\\Pi\n\n\n17\n\\(\\rho\\)\n\\rho\n\n\n\n\n18\n\\(\\sigma\\)\n\\sigma\n\\(\\Sigma\\)\n\\Sigma\n\n\n19\n\\(\\tau\\)\n\\tau\n\n\n\n\n20\n\\(\\upsilon\\)\n\\upsilon\n\\(\\Upsilon\\)\n\\Upsilon\n\n\n21\n\\(\\phi\\)\n\\phi\n\\(\\Phi\\)\n\\Phi\n\n\n22\n\\(\\chi\\)\n\\chi\n\n\n\n\n23\n\\(\\psi\\)\n\\psi\n\\(\\Psi\\)\n\\Psi\n\n\n24\n\\(\\omega\\)\n\\omega\n\\(\\Omega\\)\n\\Omega\n\n\n25\n\\(\\digamma\\)\n\\digamma"
+  },
+  {
+    "objectID": "write-math-equation.html#二元运算符",
+    "href": "write-math-equation.html#二元运算符",
+    "title": "1  书写数学公式",
+    "section": "1.2 二元运算符",
+    "text": "1.2 二元运算符\n\n\n\n序号\n符号\nLaTeX\n\n\n\n\n1\n\\(+\\)\n+\n\n\n2\n\\(-\\)\n-\n\n\n3\n\\(\\times\\)\n\\times\n\n\n4\n\\(\\div\\)\n\\div\n\n\n5\n\\(\\pm\\)\n\\pm\n\n\n6\n\\(\\mp\\)\n\\mp\n\n\n7\n\\(\\triangleleft\\)\n\\triangleleft\n\n\n8\n\\(\\triangleright\\)\n\\triangleright\n\n\n9\n\\(\\cdot\\)\n\\cdot\n\n\n10\n\\(\\setminus\\)\n\\setminus\n\n\n11\n\\(\\star\\)\n\\star\n\n\n12\n\\(\\ast\\)\n\\ast\n\n\n13\n\\(\\cup\\)\n\\cup\n\n\n14\n\\(\\cap\\)\n\\cap\n\n\n15\n\\(\\sqcup\\)\n\\sqcup\n\n\n16\n\\(\\sqcap\\)\n\\sqcap\n\n\n17\n\\(\\vee\\)\n\\vee\n\n\n18\n\\(\\wedge\\)\n\\wedge\n\n\n19\n\\(\\circ\\)\n\\circ"
+  },
+  {
+    "objectID": "write-math-equation.html#二元关系符",
+    "href": "write-math-equation.html#二元关系符",
+    "title": "1  书写数学公式",
+    "section": "1.3 二元关系符",
+    "text": "1.3 二元关系符\n\n\n\n序号\n符号\nLaTeX\n\n\n\n\n1\n\\(=\\)\n=\n\n\n2\n\\(\\ne\\)\n\\ne\n\n\n3\n\\(\\neq\\)\n\\neq\n\n\n4\n\\(\\equiv\\)\n\\equiv\n\n\n5\n\\(\\not\\equiv\\)\n\\not\\equiv\n\n\n6\n\\(\\doteq\\)\n\\doteq\n\n\n7\n\\(\\doteqdot\\)\n\\doteqdot"
+  },
+  {
+    "objectID": "write-math-equation.html#逻辑符号",
+    "href": "write-math-equation.html#逻辑符号",
+    "title": "1  书写数学公式",
+    "section": "1.4 逻辑符号",
+    "text": "1.4 逻辑符号\n\n\n\n序号\n符号\nLaTeX\n\n\n\n\n1\n\\(\\forall\\)\n\\forall\n\n\n2\n\\(\\exists\\)\n\\exists\n\n\n3\n\\(\\nexists\\)\n\\nexists\n\n\n4\n\\(\\therefore\\)\n\\therefore\n\n\n5\n\\(\\because\\)\n\\because\n\n\n6\n\\(\\And\\)\n\\And\n\n\n7\n\\(\\lor\\)\n\\lor\n\n\n8\n\\(\\vee\\)\n\\vee"
+  },
+  {
+    "objectID": "write-math-equation.html#集合符号",
+    "href": "write-math-equation.html#集合符号",
+    "title": "1  书写数学公式",
+    "section": "1.5 集合符号",
+    "text": "1.5 集合符号\n\n\n\n序号\n符号\nLaTeX\n\n\n\n\n1\n\\(\\{ \\}\\)\n\\{ \\}\n\n\n2\n\\(\\emptyset\\)\n\\emptyset\n\n\n3\n\\(\\varnothing\\)\n\\varnothing\n\n\n4\n\\(\\in\\)\n\\in\n\n\n5\n\\(\\notin\\)\n\\notin\n\n\n6\n\\(\\ni\\)\n\\ni\n\n\n7\n\\(\\cap\\)\n\\cap\n\n\n8\n\\(\\Cap\\)\n\\Cap\n\n\n9\n\\(\\sqcap\\)\n\\sqcap\n\n\n10\n\\(\\bigcap\\)\n\\bigcap\n\n\n11\n\\(\\cup\\)\n\\cup\n\n\n12\n\\(\\Cup\\)\n\\Cup\n\n\n13\n\\(\\sqcup\\)\n\\sqcup\n\n\n14\n\\(\\bigcup\\)\n\\bigcup\n\n\n15\n\\(\\bigsqcup\\)\n\\bigsqcup"
+  },
+  {
+    "objectID": "write-math-equation.html#特殊符号",
+    "href": "write-math-equation.html#特殊符号",
+    "title": "1  书写数学公式",
+    "section": "1.6 特殊符号",
+    "text": "1.6 特殊符号\n\n\n\n序号\n符号\nLaTeX\n\n\n\n\n1\n\\(\\infty\\)\n\\infty"
+  },
+  {
+    "objectID": "write-math-equation.html#分数",
+    "href": "write-math-equation.html#分数",
+    "title": "1  书写数学公式",
+    "section": "1.7 分数",
+    "text": "1.7 分数\n\n\n\n类型\n符号\nLaTeX\n\n\n\n\n分数\n\\(\\frac{2}{4}x=0.5x\\)\n\\frac{2}{4}x=0.5x\n\n\n分数\n\\({2 \\over 4}x=0.5x\\)\n{2 \\over 4}x=0.5x"
+  },
+  {
+    "objectID": "write-math-equation.html#数值函数",
+    "href": "write-math-equation.html#数值函数",
+    "title": "1  书写数学公式",
+    "section": "1.8 数值函数",
+    "text": "1.8 数值函数\n\n\n\n\n\n\n\n符号\nLaTeX\n\n\n\n\n\\(\\exp_a b = a^b, \\exp b = e^b, 10^m\\)\n\\exp_a b = a^b, \\exp b = e^b, 10^m\n\n\n\\(\\ln c, \\lg d = \\log e, \\log_{10} f\\)\n\\ln c, \\lg d = \\log e, \\log_{10} f\n\n\n\\(\\sin a, \\cos b, \\tan c, \\cot d, \\sec e, \\csc f\\)\n\\sin a, \\cos b, \\tan c, \\cot d, \\sec e, \\csc f\n\n\n\\(\\min(x,y), \\max(x,y)\\)\n\\min(x,y), \\max(x,y)"
+  },
+  {
+    "objectID": "write-math-equation.html#根号",
+    "href": "write-math-equation.html#根号",
+    "title": "1  书写数学公式",
+    "section": "1.9 根号",
+    "text": "1.9 根号\n\n\n\n符号\nLaTeX\n\n\n\n\n\\(\\surd\\)\n\\surd\n\n\n\\(\\sqrt{\\pi}\\)\n\\sqrt{\\pi}\n\n\n\\(\\sqrt[n]{\\pi}\\)\n\\sqrt[n]{\\pi}\n\n\n\\(\\sqrt[3]{\\frac{x^3+y^3}{2}}*\\)\n\\sqrt[3]{\\frac{x^3+y^3}{2}}*"
+  },
+  {
+    "objectID": "write-math-equation.html#微分与导数",
+    "href": "write-math-equation.html#微分与导数",
+    "title": "1  书写数学公式",
+    "section": "1.10 微分与导数",
+    "text": "1.10 微分与导数\n\n\n\n\n\n\n\n符号\nLaTeX\n\n\n\n\n\\(dt, \\mathrm{d}t, \\partial t, \\nabla\\psi\\)\ndt, \\mathrm{d}t, \\partial t, \\nabla\\psi\n\n\n\\(dy/dx, \\mathrm{d}y/\\mathrm{d}x\\)\ndy/dx, \\mathrm{d}y/\\mathrm{d}x\n\n\n\\(\\frac{dy}{dx}, \\frac{\\mathrm{d}y}{\\mathrm{d}x}\\)\n\\frac{dy}{dx}, \\frac{\\mathrm{d}y}{\\mathrm{d}x}\n\n\n\\(\\prime, \\backprime, f^\\prime, f', f''\\)\n\\prime, \\backprime, f^\\prime, f', f''"
+  },
+  {
+    "objectID": "write-math-equation.html#极限",
+    "href": "write-math-equation.html#极限",
+    "title": "1  书写数学公式",
+    "section": "1.11 极限",
+    "text": "1.11 极限\n\n\n\n符号\nLaTeX\n\n\n\n\n\\(\\lim_{n \\to \\infty}x_n\\)\n\\lim_{n \\to \\infty}x_n"
+  },
+  {
+    "objectID": "write-math-equation.html#大型运算符",
+    "href": "write-math-equation.html#大型运算符",
+    "title": "1  书写数学公式",
+    "section": "1.12 大型运算符",
+    "text": "1.12 大型运算符\n\n\n\n分类\n符号\nLaTeX\n\n\n\n\n求和\n\\(\\sum_{a}^{b}\\)\n\\sum_{a}^{b}\n\n\n连乘积\n\\(\\prod_{a}^{b}\\)\n\\prod_{a}^{b}\n\n\n余积\n\\(\\coprod_{a}^{b}\\)\n\\coprod_{a}^{b}\n\n\n并集\n\\(\\bigcup_{a}^{b}\\)\n\\bigcup_{a}^{b}\n\n\n交集\n\\(\\bigcap_{a}^{b}\\)\n\\bigcap_{a}^{b}\n\n\n析取\n\\(\\bigvee_{a}^{b}\\)\n\\bigvee_{a}^{b}\n\n\n合取\n\\(\\bigwedge_{a}^{b}\\)\n\\bigwedge_{a}^{b}"
+  },
+  {
+    "objectID": "write-math-equation.html#上下标",
+    "href": "write-math-equation.html#上下标",
+    "title": "1  书写数学公式",
+    "section": "1.13 上下标",
+    "text": "1.13 上下标\n\n\n\n\n\n\n\n\n类型\n符号\n代码\n\n\n\n\n上标\n\\(a^2\\) \\(a^{x+3}\\)\na^2 a^{x+3}\n\n\n下标\n\\(a_2\\)\na_2\n\n\n组合\n\\(10^{30} a^{2+2}\\) \\(a{i,j} b{f'}\\)\n10^{30} a^{2+2} a{i,j} b{f'}\n\n\n上下标混合\n\\(x_2^3\\) \\({x_2}^3\\)\nx_2^3 {x_2}^3\n\n\n上标的上标\n\\(10^{10^{8}}\\)\n10^{10^{8}}"
+  },
+  {
+    "objectID": "write-math-equation.html#二项式系数",
+    "href": "write-math-equation.html#二项式系数",
+    "title": "1  书写数学公式",
+    "section": "1.14 二项式系数",
+    "text": "1.14 二项式系数\n\n\n\n类型\n符号\nLaTeX\n\n\n\n\n二项式系数\n\\(\\binom{n}{k}\\)\n\\binom{n}{k}\n\n\n小型二项式系数\n\\(\\tbinom{n}{k}\\)\n\\tbinom{n}{k}\n\n\n大型二项式系数\n\\(\\dbinom{n}{k}\\)\n\\dbinom{n}{k}"
+  },
+  {
+    "objectID": "write-math-equation.html#矩阵",
+    "href": "write-math-equation.html#矩阵",
+    "title": "1  书写数学公式",
+    "section": "1.15 矩阵",
+    "text": "1.15 矩阵\n\\[\n\\begin{matrix}\nx & y \\\\\nz & v\n\\end{matrix}\n\\]\n\\begin{matrix}\nx & y \\\\\nz & v\n\\end{matrix}\n\\[\n\\begin{vmatrix}\nx & y \\\\\nz & v\n\\end{vmatrix}\n\\]\n\\begin{vmatrix}\nx & y \\\\\nz & v\n\\end{vmatrix}"
+  },
+  {
+    "objectID": "write-math-equation.html#数组",
+    "href": "write-math-equation.html#数组",
+    "title": "1  书写数学公式",
+    "section": "1.16 数组",
+    "text": "1.16 数组\n\\[\n\\begin{array}{ | c | c | c | }\na & b & S \\\\\n\\hline\n0 & 0 & 1 \\\\\n0 & 1 & 1 \\\\\n1 & 0 & 1 \\\\\n1 & 1 & 0\n\\end{array}\n\\]\n\\begin{array}{ | c | c | c | }\na & b & S \\\\\n\\hline\n0 & 0 & 1 \\\\\n0 & 1 & 1 \\\\\n1 & 0 & 1 \\\\\n1 & 1 & 0\n\\end{array}"
+  },
+  {
+    "objectID": "write-math-equation.html#方程组",
+    "href": "write-math-equation.html#方程组",
+    "title": "1  书写数学公式",
+    "section": "1.17 方程组",
+    "text": "1.17 方程组\n\\[\n\\begin{cases}\n3x + 5y + z \\\\\n7x - 2y + 4z \\\\\n-6x + 3y + 2z\n\\end{cases}\n\\]\n\\begin{cases}\n3x + 5y + z \\\\\n7x - 2y + 4z \\\\\n-6x + 3y + 2z\n\\end{cases}"
+  },
+  {
+    "objectID": "write-math-equation.html#多行等式",
+    "href": "write-math-equation.html#多行等式",
+    "title": "1  书写数学公式",
+    "section": "1.18 多行等式",
+    "text": "1.18 多行等式\nMathJax 3.0 取消了单行公式环境下 \\\\ 的强制换行功能，因此强制换行命令 \\\\ 仅能用于 eqnarray、align、array、matrix 等多行环境当中。除此之外，还可以在 \\displaylines{} 行显示命令当中使用 \\\\ 强制换行命令.\n\n\n\n\n\n\n\n符号\nLaTex\n\n\n\n\n\\(\\displaylines{y=1729x \\\\ y=1729-x}\\)\n\\displaylines{y=1729x \\\\ y=1729-x}\n\n\n\n对于多行环境，则使用换行功能即可。\n\\[\n\\begin{align}\nf(x) & = (a+b)^2\\\\\n& = a^2+2ab+b^2\n\\end{align}\n\\]\n\\begin{align}\nf(x) & = (a+b)^2\\\\\n& = a^2+2ab+b^2\n\\end{align}"
+  },
+  {
+    "objectID": "write-math-equation.html#对齐",
+    "href": "write-math-equation.html#对齐",
+    "title": "1  书写数学公式",
+    "section": "1.19 对齐",
+    "text": "1.19 对齐\n使用对齐符号 & 和 array 可以将多个元素按照指定规则 lcl 对齐。\n\\[\n\\begin{array}{lcl}\nz & = & a \\\\\nf(x,y,z) & = & x + y + z\n\\end{array}\n\\]\n\\begin{array}{lcl}\nz & = & a \\\\\nf(x,y,z) & = & x + y + z\n\\end{array}\n改变对齐规则后：\n\\[\n\\begin{array}{rcl}\nz & = & a \\\\\nf(x,y,z) & = & x + y + z\n\\end{array}\n\\]\n\\begin{array}{rcl}\nz & = & a \\\\\nf(x,y,z) & = & x + y + z\n\\end{array}"
+  },
+  {
+    "objectID": "write-math-equation.html#括号",
+    "href": "write-math-equation.html#括号",
+    "title": "1  书写数学公式",
+    "section": "1.20 括号",
+    "text": "1.20 括号\n常用的 ()、[]、{} 括号符号可以在 LaTeX 环境当中直接进行使用，但是如果处于较大的符号当中，就应该配合 \\left 与 \\right 命令来使用：\n\n\n\n\n\n\n\n\n类型\n符号\nLaTeX\n\n\n\n\n圆括号、小括号\n\\(\\left ( \\frac{a}{b} \\right )\\)\n\\left ( \\frac{a}{b} \\right )\n\n\n圆括号、小括号\n\\(( \\frac{a}{b} )\\)\n( \\frac{a}{b} )"
+  },
+  {
+    "objectID": "write-math-equation.html#空格",
+    "href": "write-math-equation.html#空格",
+    "title": "1  书写数学公式",
+    "section": "1.21 空格",
+    "text": "1.21 空格\n\n\n\n序号\n符号\nLaTeX\n\n\n\n\n双空格\n\\(a \\qquad b\\)\na \\qquad b\n\n\n单空格\n\\(a \\quad b\\)\na \\quad b\n\n\n字符空格\n\\(a\\ b\\)\na\\ b\n\n\n文本模式中的字符空格\n\\(a \\text{ } b\\)\na \\text{ } b\n\n\n大空格\n\\(a\\;b\\)\na\\;b\n\n\n小空格\n\\(a\\,b\\)\na\\,b"
+  },
+  {
+    "objectID": "write-chemical-equation.html#分子式",
+    "href": "write-chemical-equation.html#分子式",
+    "title": "2  书写化学反应式",
+    "section": "2.1 分子式",
+    "text": "2.1 分子式\n\\(\\ce{H2O}\\)\n$\\ce{H2O}$\n\\(\\ce{Sb2O3}\\)\n$\\ce{Sb2O3}$"
+  },
+  {
+    "objectID": "write-chemical-equation.html#电荷",
+    "href": "write-chemical-equation.html#电荷",
+    "title": "2  书写化学反应式",
+    "section": "2.2 电荷",
+    "text": "2.2 电荷\n\\(\\ce{H+}\\)\n\\(\\ce{CrO4^2-}\\)\n\\(\\ce{[AgCl2]-}\\)\n\\(\\ce{Y^99+}\\)\n\\(\\ce{Y^{99+}}\\)\n$\\ce{H+}$\n \n$\\ce{CrO4^2-}$\n \n$\\ce{[AgCl2]-}$\n \n$\\ce{Y^99+}$\n \n$\\ce{Y^{99+}}$"
+  },
+  {
+    "objectID": "write-chemical-equation.html#化学方程式",
+    "href": "write-chemical-equation.html#化学方程式",
+    "title": "2  书写化学反应式",
+    "section": "2.3 化学方程式",
+    "text": "2.3 化学方程式\n\\(\\ce{CO2 + C -&gt; 2 CO}\\)\n$\\ce{CO2 + C -&gt; 2 CO}$\n\\(\\ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}\\)\n$\\ce{Hg^2+ -&gt;[I-] HgI2 -&gt;[I-] [Hg^{II}I4]^2-}$\n\\(C_p[\\ce{H2O(l)}] = \\pu{75.3 J // mol K}\\)\n$C_p[\\ce{H2O(l)}] = \\pu{75.3 J // mol K}$"
+  },
+  {
+    "objectID": "write-chemical-equation.html#同位素",
+    "href": "write-chemical-equation.html#同位素",
+    "title": "2  书写化学反应式",
+    "section": "2.4 同位素",
+    "text": "2.4 同位素\n\\(\\ce{^{227}_{90}Th+}\\)\n\\(\\ce{^227_90Th+}\\)\n\\(\\ce{^{0}_{-1}n^{-}}\\)\n\\(\\ce{^0_-1n-}\\)\n$\\ce{^{227}_{90}Th+}$\n \n$\\ce{^227_90Th+}$\n \n$\\ce{^{0}_{-1}n^{-}}$\n \n$\\ce{^0_-1n-}$"
+  },
+  {
+    "objectID": "write-chemical-equation.html#反应箭头",
+    "href": "write-chemical-equation.html#反应箭头",
+    "title": "2  书写化学反应式",
+    "section": "2.5 反应箭头",
+    "text": "2.5 反应箭头\n\\(\\ce{A -&gt; B}\\)\n\\(\\ce{A &lt;- B}\\)\n\\(\\ce{A &lt;--&gt; B}\\)\n\\(\\ce{A &lt;=&gt; B}\\)\n$\\ce{A -&gt; B}$\n \n$\\ce{A &lt;- B}$\n \n$\\ce{A &lt;--&gt; B}$\n \n$\\ce{A &lt;=&gt; B}$\n\\(\\ce{A -&gt;[{text above}][{text below}] B}\\)\n$\\ce{A -&gt;[{text above}][{text below}] B}$"
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#使用-bootstrap-样式类",
+    "href": "technical-writing-with-quarto.html#使用-bootstrap-样式类",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.1 使用 Bootstrap 样式类",
+    "text": "3.1 使用 Bootstrap 样式类\n作为表格标题旁边的属性给出的 Bootstrap 表格类会插入 &lt;table&gt; 元素。允许使用的类是那些明确适用于整个表格的类，它们是：\"primary\", \"secondary\", \"success\", \"danger\", \"warning\", \"info\", \"light\", \"dark\", \"striped\", \"hover\", \"active\", \"bordered\", \"borderless\", \"sm\", \"responsive\", \"responsive-sm\", \"responsive-md\", \"responsive-lg\", \"responsive-xl\", \"responsive-xxl\"。\n例如，下面的 Markdown 表格将以行条纹呈现，悬停时还会高亮显示行：\n| fruit  | price  |\n|--------|--------|\n| apple  | 2.05   |\n| pear   | 1.37   |\n| orange | 3.09   |\n\n: Fruit prices {.striped .hover}\n\nFruit prices\n\n\nfruit\nprice\n\n\n\n\napple\n2.05\n\n\npear\n1.37\n\n\norange\n3.09"
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#小贴士",
+    "href": "technical-writing-with-quarto.html#小贴士",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.2 小贴士",
+    "text": "3.2 小贴士\n:::{.callout-note}\nNote that there are five types of callouts, including: \n`note`, `tip`, `warning`, `caution`, and `important`.\n:::\n\n\n\n\n\n\nNote\n\n\n\nNote that there are five types of callouts, including: note, tip, warning, caution, and important."
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#sec-quarto-page-break",
+    "href": "technical-writing-with-quarto.html#sec-quarto-page-break",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.3 分页符",
+    "text": "3.3 分页符\npage 1\n\n{{&lt; pagebreak &gt;}}\n\npage 2"
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#视频",
+    "href": "technical-writing-with-quarto.html#视频",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.4 视频",
+    "text": "3.4 视频\n{{&lt; video local-video.mp4 &gt;}}\n\n{{&lt; video https://www.youtube.com/embed/wo9vZccmqwc &gt;}}\n\n{{&lt; video https://vimeo.com/548291297 &gt;}}\n\n{{&lt; video https://youtu.be/wo9vZccmqwc width=\"400\" height=\"300\" &gt;}}\n\n{{&lt; video https://www.youtube.com/embed/wo9vZccmqwc\n    title=\"What is the CERN?\"\n    start=\"116\"\n    aspect-ratio=\"21x9\" \n&gt;}}"
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#div",
+    "href": "technical-writing-with-quarto.html#div",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.5 DIV",
+    "text": "3.5 DIV\nDIV 插入使用 3 个以上连续的英文分号（:::），并在对应数量的连续分号处结束。通过改变分号的数量，可以实现 DIV 的嵌套。\n::: {.border}\nThis content can be styled with a border\n:::\n::::: {#special .sidebar}\n\n::: {.warning}\nHere is a warning.\n:::\n\nMore content.\n:::::\n\n\nHere is a warning.\n\nMore content."
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#流程图",
+    "href": "technical-writing-with-quarto.html#流程图",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.6 流程图",
+    "text": "3.6 流程图\n```{mermaid}\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]\n```\n效果如下\n\n\n\n\nflowchart LR\n  A[Hard edge] --&gt; B(Round edge)\n  B --&gt; C{Decision}\n  C --&gt; D[Result one]\n  C --&gt; E[Result two]"
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#键盘快捷键",
+    "href": "technical-writing-with-quarto.html#键盘快捷键",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.7 键盘快捷键",
+    "text": "3.7 键盘快捷键\nTo print, press {{&lt; kbd Shift-Ctrl-P &gt;}}. \n\nTo open an existing new project, press {{&lt; kbd mac=Shift-Command-O win=Shift-Control-O linux=Shift-Ctrl-L &gt;}}.\n在运行上面代码时，会根据操作系统显示相应的快捷键。\nTo print, press Shift-Ctrl-P. To open an existing new project, press ."
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#交叉引用",
+    "href": "technical-writing-with-quarto.html#交叉引用",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.8 交叉引用",
+    "text": "3.8 交叉引用\n交叉引用需要用到索引标签。\n\n\n\n\n\n\nNote\n\n\n\n\n\n\n类型\n标签前缀\n引用方法\n\n\n\n\n表格\ntbl-\n@tbl-id\n\n\n图片\nfig-\n\n\n\n代码块\n#tbl-，fig-\n\n\n\n公式\n#eq-\n\n\n\n章节\n#sec-\n\n\n\n代码列表\n#lst-customers\n@lst-customers\n\n\n定理与证明\n#thm-，#lem-\n\n\n\n\n\n\n\n3.8.1 引用格式\n\n\n\n类型\n语法\n\n\n\n\n默认\n@fig-elephant\n\n\n首字母大写\n@Fig-elephant\n\n\n自定义前缀\nFig @fig-elephant\n\n\n仅序号\n-@fig-elephant\n\n\n\n标签可以在代码块属性中设置：\n```{python}\n#| label: tbl-planets\n#| tbl-cap: Astronomical object\n\nfrom IPython.display import Markdown\nfrom tabulate import tabulate\ntable = [[\"Sun\",\"696,000\",1.989e30],\n         [\"Earth\",\"6,371\",5.972e24],\n         [\"Moon\",\"1,737\",7.34e22],\n         [\"Mars\",\"3,390\",6.39e23]]\nMarkdown(tabulate(\n  table, \n  headers=[\"Astronomical object\",\"R (km)\", \"mass (kg)\"]\n))\n```\n\n\n3.8.2 表格\n\n\n\n\n\n\nImportant\n\n\n\nIn order for a table to be cross-referenceable, its label must start with the tbl- prefix.\n\n\n对于 Markdown 表格来说，如此添加索引标签。\n| Col1 | Col2 | Col3 |\n|------|------|------|\n| A    | B    | C    |\n| E    | F    | G    |\n| A    | G    | G    |\n\n: My Caption {#tbl-letters}\n\nSee @tbl-letters.\n如果表格是由代码段生成的，则依据前缀规则指定代码段标签。\n```{r}\n#| label: tbl-tables\n#| tbl-cap: \"Tables\"\n#| tbl-subcap: true\n#| layout-ncol: 2\n\nlibrary(knitr)\nkable(head(cars))\nkable(head(pressure))\n```\n\n\n3.8.3 图片\n![Elephant](elephant.png){#fig-elephant}\n\nSee @fig-elephant for an illustration.\n如果图片是由代码段生成的，则依据前缀规则指定代码段标签。\n```{r}\n#| label: fig-plot\n#| fig-cap: \"Plot\"\n\nplot(cars)\n```\nFor example, see @fig-plot.\n\n\n3.8.4 公式\n$$\nE = m C^2\n$$ {#eq-mass-energy}\n\\[\nE = m C^2\n\\tag{3.1}\\]\n质能方程参见 Equation 3.1 。"
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#代码",
+    "href": "technical-writing-with-quarto.html#代码",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.9 代码",
+    "text": "3.9 代码\n指定代码语言使用 ```&lt;lang&gt;，指定代码语言并运行使用 ```{lang}。"
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#标签页",
+    "href": "technical-writing-with-quarto.html#标签页",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.10 标签页",
+    "text": "3.10 标签页\n\nJupyterKnitr\n\n\n```{python}\n#| label: fig-plot\n#| fig-cap: \"Plot\"\n\nimport matplotlib.pyplot as plt\nplt.plot([1,23,2,4])\nplt.show()\n```\n\nFor example, see @fig-plot.\n\n\n```{r}\n#| label: fig-plot\n#| fig-cap: \"Plot\"\n\nplot(cars)\n```\n\nFor example, see @fig-plot."
+  },
+  {
+    "objectID": "technical-writing-with-quarto.html#特殊符号",
+    "href": "technical-writing-with-quarto.html#特殊符号",
+    "title": "3  Quarto 常用文档元素",
+    "section": "3.11 特殊符号",
+    "text": "3.11 特殊符号\n\n如果想要插入 ```，则需要连续用 4 个反引号，将 3 个反引号包括起来。\n如果想要插入 ```{r}，需要使用两个大括号 {{r}}。\n如果想要插入一段代码却不执行，还可以增加缩进。"
+  },
+  {
+    "objectID": "culture-method.html#选择什么样的培养基",
+    "href": "culture-method.html#选择什么样的培养基",
+    "title": "5  培养方法",
+    "section": "5.1 选择什么样的培养基？",
+    "text": "5.1 选择什么样的培养基？\n\n5.1.1 应该使用基本培养基还是富营养培养基？\n\n\n5.1.2 都有哪些常用的碳源类型？"
+  },
+  {
+    "objectID": "culture-method.html#培养条件如何设置",
+    "href": "culture-method.html#培养条件如何设置",
+    "title": "5  培养方法",
+    "section": "5.2 培养条件如何设置？",
+    "text": "5.2 培养条件如何设置？\n\n5.2.1 静置还是振荡培养？\n\n\n5.2.2 培养温度如何设置？\n\n\n5.2.3 培养多长时间？"
+  },
+  {
+    "objectID": "culture-method.html#有哪些常用的培养策略",
+    "href": "culture-method.html#有哪些常用的培养策略",
+    "title": "5  培养方法",
+    "section": "5.3 有哪些常用的培养策略？",
+    "text": "5.3 有哪些常用的培养策略？\n\n5.3.1 什么是连续梯度稀释培养？"
+  },
+  {
+    "objectID": "culture-method.html#fba-分析中的培养基",
+    "href": "culture-method.html#fba-分析中的培养基",
+    "title": "5  培养方法",
+    "section": "5.4 FBA 分析中的培养基",
+    "text": "5.4 FBA 分析中的培养基\n(Harcombe et al. 2014)\nTable S1: Metabolite concentrations used to simulate minimal medium in COMETS. Lactose (lcts) was replaced with alternative carbon sources for individual E. coli colony simulations (glc = 3.5e-6, lac-L = 7.1e-6, or ac = 1.1e-5). Oxygen was lowered to maintain the same concentration with smaller pixel size (i.e. if box length (L)= 0.2 mm then o2 = 1e-5). For the 3-species consortium methylamine was added (mea = 2.0e-6).\n\n\n\nCompound\nmM per box\n\n\n\n\nca2[e]\n1000.0\n\n\ncl[e]\n1000.0\n\n\ncobalt2[e]\n1000.0\n\n\ncu2[e]\n1000.0\n\n\nfe2[e]\n1000.0\n\n\nfe3[e]\n1000.0\n\n\nk[e]\n1000.0\n\n\nlcts[e]\n1.2e-5\n\n\nmg2[e]\n1000.0\n\n\nmn2[e]\n1000.0\n\n\nmobd[e]\n1000.0\n\n\nnh4[e]\n1000.0\n\n\nni2[e]\n1000.0\n\n\no2[e]\n6.2e-5\n\n\npi[e]\n1000.0\n\n\nso4[e]\n1000.0\n\n\nzn2[e]\n1000.0\n\n\n\nTable S2: Metal Mix used in Hypho minimal media for lab experiments\n\n\n\nMetal\n1000x concentration (mM)\n\n\n\n\n\\(\\ce{ZnSO4}\\)\n0.60\n\n\n\\(\\ce{CaCl2}\\)\n9.98\n\n\n\\(\\ce{MnCl2}\\)\n0.51\n\n\n\\(\\ce{(NH4)6Mo7O24}\\)\n1.00\n\n\n\\(\\ce{CuSO4}\\)\n0.50\n\n\n\\(\\ce{CoCl2}\\)\n1.00\n\n\n\\(\\ce{Na2WO4}\\)\n0.17\n\n\n\\(\\ce{FeSO4}\\)\n8.88\n\n\n\n\n\n\n\nHarcombe, William R., William J. Riehl, Ilija Dukovski, Brian R. Granger, Alex Betts, Alex H. Lang, Gracia Bonilla, et al. 2014. “Metabolic Resource Allocation in Individual Microbes Determines Ecosystem Interactions and Spatial Dynamics.” Cell Reports 7 (4): 1104–15. https://doi.org/10.1016/j.celrep.2014.03.070."
+  },
+  {
+    "objectID": "metabolic-model.html#sec-genome-scale-models",
+    "href": "metabolic-model.html#sec-genome-scale-models",
+    "title": "6  代谢模型",
+    "section": "6.1 Genome-scale Models",
+    "text": "6.1 Genome-scale Models\n大多数自然微生物系统都是在具有时空变化的环境中进化而来的。理解这种复杂系统的一个主要局限是缺乏数学建模框架，无法将单个物种的基因组和环境的时空变化与系统行为联系起来。时空通量平衡分析（SFBA）将通量平衡分析（FBA）扩展到考虑环境的时空变化，是微生物代谢基因组尺度重建的新兴领域。SFBA 预计是微生物代谢建模的下一个前沿领域，未来的方法开发和系统应用将迅速增加。\n\n6.1.1 通量平衡分析及其动态扩展\n通量平衡分析法（FBA）是一种有限描述全细胞代谢的建模方法，该方法的基础是代谢物质量守恒和反应化学计量学。因为化学计量学模型描述了通过纳入基因组中注释的生化反应来构建的代谢通路，由此产生的模型通常被称为基因组尺度代谢（GSM）模型。\n给定化学计量矩阵和一组指定的可用养分吸收率，目标是求解未知细胞内反应速率（即细胞内通量）和代谢副产物分泌速率（即分泌通量）的 GSM。由于比起质量平衡方程，化学计量方程总是包含更多的未知通量，因此 GSM 有无限多的解，通量分布无法唯一确定。为了克服这一局限性，假定细胞新陈代谢受到调节，以实现某种细胞目标。最常见的目标是最大限度地生长，由此就将生物代谢物（如 RNA、DNA、蛋白质、碳水化合物等）的化学计量方程结合了起来，产生一个线性规划（LP）问题，通过有效求解，可预测细胞内通量分布、吸收和分泌（交换）通量以及生长率（ Figure 6.1 ）。\n\n\n\nFigure 6.1: 基因组尺度通量分析方法。GSM 构建了一个线性回归问题，利用化学计量矩阵 \\(A\\)、生物量组成权重 \\(w\\)、通量 \\(v_{min}\\) 和 \\(v_{max}\\) 边界以及养分吸收率的指定边界计算未知通量 \\(v\\)。在这个具体例子中，葡萄糖（\\(g\\)）和氧气（\\(o\\)）是限制生长的营养物质，乙醇（\\(e\\)）是主要的代谢副产品。根据指定的两种营养物质的通量界限（\\(v_{g,min}\\), \\(v_{o,min}\\)），计算出细胞生长率（\\(μ\\)）、实际营养物质吸收率（\\(v_g\\), \\(v_o\\)）和乙醇分泌率（ \\(v_e\\)）。(Henson 2015)\n\n\n\n\n6.1.2 SFBA 问题及最新进展\nFBA 所依据的假设是细胞内代谢和细胞外环境都是时间不变的。动态 FBA（DFBA）则通过扩展取消了细胞外环境的稳态假设1。DFBA 模型是在细胞迅速适应环境变化的假设条件下，将细胞内代谢的 GSM 与生长限制性营养物质吸收率的动力学表达式以及细胞生物量、限制性营养物质和分泌的代谢副产物的动态质量平衡方程相结合而形成的（ Figure 6.2 ）。DFBA 的一个主要优点是：模型输出包括生物量和细胞外代谢物浓度，而不像 FBA 那样只包括生长速率和交换通量。此外，对细胞外浓度和细胞内通量的预测具有时间分辨率。\n\n\n\nFigure 6.2: 基因组尺度 DFBA 在细胞内动力学比细胞外动力学快的假设条件下，使用 GSM 进行 FBA，以预测生长率、养分吸收率和副产物分泌率。FBA 通量可作为细胞外环境常微分方程（Ordinary Differential Equation，ODE）的输入，经整合后可对生物量、营养物质和副产物浓度进行时间分辨预测。这些浓度可作为养分吸收动力学的输入，用于计算 FBA 问题中养分吸收率的传输边界。本例中，葡萄糖（ \\(g\\)）和氧气（ \\(o\\)）是限制生长的养分，乙醇（ \\(e\\)）是主要代谢副产物，其中 \\(X\\)、\\(G\\)、\\(E\\) 和 \\(O\\) 分别为生物量、葡萄糖、乙醇和氧气浓度。(Henson 2015)\n\n\n尽管 DFBA 考虑了细胞外动态对细胞内代谢的影响，但该方法是基于细胞外环境混合良好且空间均匀的假设。同时考虑空间和时间变化的数学模型通常称为时空模型。我们把包括环境空间异质性的 DFBA 扩展称为时空 FBA（Spatiotemporal FBA，SFBA）。\nSFBA 中用随时间和空间坐标变化的偏微分方程（Partial Differential Equations，PDEs）取代了 DFBA 中的随时间变化的 ODEs2。偏微分方程表示生物量、代谢物和可能的其他化学物种浓度的细胞外质量平衡方程，并说明引起空间变化的传输机制，通常包括代谢物扩散和液相/气相对流。必须在空间域的边界施加边界条件，以确保 PDE 得到良好的拟合。与 DFBA 一样，GSM 和细胞外质量平衡方程通过养分吸收动力学联系在一起。\n营养物质和代谢产物在生物膜不同位置存在异质性。而且，由于细胞的生长和/或死亡，空间异质性可能会随着时间的变化。为便于说明，考虑厚度固定为 \\(L\\) 的单一物种生物膜中，底部（ \\(z=0\\) ）有单一限制生长的营养物质，顶部（ \\(z=L\\) ）有单一合成的副产品排出。假设空间变化只发生在生物膜的轴向 \\(z\\)，描述生物膜扩散过程的 PDE 可写成以下形式：\n\\[\n\\begin{eqnarray}\n\\begin{array}{llll}\n\\frac {\\partial X(z,t)}{\\partial t} = \\mu X \\qquad &  X(z, 0) = X_I \\\\\n\\frac {\\partial S(z, t)}{\\partial t} = \\upsilon_S X + D_S \\frac {\\partial^2S}{\\partial z^2} \\qquad & S(0,t) = S_0 \\quad & \\frac {\\partial S(L,t)}{\\partial z} = 0 \\quad & S(z,0) = S_I \\\\\n\\frac {\\partial P(z,t)}{\\partial t} = v_P X + D_P \\frac {\\partial ^2 P}{\\partial z^2} \\qquad & \\frac{\\partial P(0,5)}{\\partial z}=0 \\quad & P(z,t)=0 \\quad & P(z,0)=P_I\n\\end{array}\n\\end{eqnarray}\n\\]\n这里的 \\(X(z,t)\\)、\\(S(z,t)\\) 和 \\(P(z,t)\\) 分别表示在 \\(z\\) 处和时间 \\(t\\) 的生物量、底物浓度和副产物浓度。通过求解 GSM 可以得到生长率 \\(μ\\)、底物吸收率 \\(v_S\\) 和副产物合成率 \\(v_P\\)。基质和副产物分别以高效扩散系数 \\(D_S\\) 和 \\(D_P\\) 在生物膜中扩散，而生物质被假定为无运动性。第二栏列出了生物膜底部的边界条件，其假设条件是：基质的浓度为 \\(S0\\)，生物质和副产物不会穿过该边界。第三列生物膜顶部的边界条件是基于以下假设：生物质和基质不会流过该边界，而副产品的去除率足够高，以至于边界浓度为零。最后，第四栏中的初始条件是基于生物膜在 \\(t=0\\) 时空间均匀的假设。\nSFBA 模型由描述细胞外环境的 PDE 和描述细胞内代谢的 LP 组成。纯物种系统只有一个 LP ，而多物种系统则需要求解每个物种的 LP。由于没有直接求解这种混合 PDE-LP 模型的计算方法，因此必须以某种方式近似 PDE 的传输行为，以生成可求解的模型。Figure 6.3\n\n\n\nFigure 6.3: 基因组尺度 SFBA。具有时空变化的微生物系统由一个时空模型来描述，该模型考虑了系统内的相关迁移过程。假定空间变化仅限于单一方向 \\(z\\)，则根据物种浓度（ \\(X_i\\)）、液相代谢物浓度（ \\(M_j\\)）和气相代谢物浓度（\\(Pj\\)）编写 PDEs。利用参与物种的 GSM 进行 FBA，以预测生长率、营养吸收率和副产物分泌率。通过对 PDEs 进行空间离散化处理，可以得到一大组带有嵌入式 LPs 的 ODEs，使用 MATLAB 软件包 DFBAlab 对这些 ODEs 进行求解，从而得出时间和空间分辨率预测结果。\n\n\n\n\n6.1.3 SFBA 案例研究\n\n\n6.1.4 COMETS 模拟合成群落演化\n2014 年发表在 Cell Reports 上的研究开发了 COMETS 的时空建模框架3，并将其用于研究二物种和三物种合成群落的涌现性行为(Harcombe et al. 2014)。COMETS 定义了一个二维网格（2D lattice），网格中的每个方格（box）代表一个不同的空间位置。假定每个物种都有可能根据相同的吸收动力学消耗可用碳源，则可使用参与物种的 GSM 解决每个方格的独立 DFBA 问题。采用了一种顺序求解策略，即先求解物种 LP，以生成本地生长速率和通量，然后在一个固定的时间步长内将细胞外 ODE 与这些恒定的 LP 求解进行整合，以生成本地生物量和代谢物浓度。在求解 LP 开始下一次迭代之前，在同一时间步长内求解二维扩散方程，以允许物种细胞质量和代谢物在方格之间扩散。\n\n研究使用 COMETS 模拟了由沙门氏菌和大肠杆菌组成的合成群落中的特定代谢物互养过程。该时空模型能够重现实验结果，即两种生物稳定共存，并收敛到大肠杆菌种群比例占 79% 的结局，且与初始比例无关。模拟由沙门氏菌、大肠杆菌和外生甲基杆菌组成的三物种合成群落也得到了类似的结果。双物种系统用于研究空间结构的影响。该模型正确地预测出，随着两个物种接种的距离越远，群落的生长速度就会越慢，这是由于交叉喂养的代谢物的扩散限制所致。此外，该模型还再现了实验结果，即在沙门氏菌和大肠杆菌种群之间放置第二个基因工程沙门氏菌菌落会促进群落生长，但放置不需要大肠杆菌交叉喂养代谢物的野生型沙门氏菌则会降低群落生长。\n\n\n6.1.5 DFBAlab 求解乙醇生物发酵问题\n\n来源：(Chen et al. 2015)\n\n预测了厌氧梭菌在垂直气泡塔反应器中将合成气（\\(\\ce{CO}\\)、\\(\\ce{H2}\\)）转化为乙醇的情况。合成气和液体介质进料流被引入气泡塔底部，并以不同的速度沿气泡塔向上流动，由于细胞生长和气体耗竭，产生了较大的空间梯度。代谢副产物乙醇和乙酸酯在从塔顶流出的液相流中回收。时空代谢模型由已发表的 C. ljungdahlii GSM [69]、\\(\\ce{CO}\\) 和 \\(\\ce{H2}\\) 的 Michaelis-Menten 吸收动力学以及 C. ljungdahlii 生物质、液相 \\(\\ce{CO}\\)、\\(\\ce{H2}\\)、乙醇和乙酸盐以及气相 \\(\\ce{CO}\\) 和 \\(\\ce{H2}\\) 的反应对流型 PDEs 组成。这些 PDE 被离散化为 100 个空间结点，并在每个结点使用六个 LP 进行词法优化，以确保交换通量的唯一性。由 900 个时间 ODE 和 600 个 LP 组成的大型离散模型在 MATLAB（MathWorks）中使用 DFBAlab（DFBA 实验室）工具进行了有效求解（ Figure 6.3 ）。\n针对各种色谱柱操作条件和养分吸收参数进行的动态模拟，得出了与现有实验一致的色谱柱行为和乙醇生产瓶颈预测，这些实验包括：（1）典型的富含 \\(\\ce{CO}\\) 的合成气会在塔的上部由于 \\(\\ce{H2}\\) 耗竭而产生大量醋酸盐，这表明增加合成气进料中的 \\(\\ce{H2}\\) 可能是有益的；（2）高效的气液传质是实现高乙醇产量和高转化率的关键，这表明需要继续开发先进的气泡塔设计，以实现极高的气液传质速率；以及 （3）提高 \\(\\ce{H2}\\) 的吸收率可大幅提高乙醇滴度和乙醇-醋酸盐比率，这表明通过改良 C. ljungdahlii 的工程设计提高 \\(\\ce{H2}\\) 的吸收率可实现高乙醇产量和高转化率。\n\n\n6.1.6 未来可能的研究方向\n基因组尺度模型是生物体已知或推断的代谢网络的数学表示[72]。利用基因组尺度模型进行模拟，可预测生物体如何利用环境中的特定资源进行生长，以及由于分泌、细胞外降解或泄漏而产生的任何新的代谢物（图 2）。因此，利用多个生物体的模型进行模拟（通过将数字生命体视为独立的组件来进行），可以对资源竞争、生态位划分或代谢交叉喂养进行定量预测，并已应用于多种系统，包括人类肠道微生物群73、74、75。(Pacheco and Vorholt 2023)\n在活体植物中，将基因组尺度模型的预测结果与合成群落实验相结合，为了解更复杂的代谢相互作用的复杂性提供了一条特别有前途的途径[27]。例如，这种综合方法最近揭示了从杨树根瘤中分离出来的细菌群落稳定性的代谢因素[76]。此外，在空间范围内模拟代谢相互作用的新方法 77、78 可以预测多物种在环境中的相互作用，这种环境近似于与植物相关的微环境 79、80、81 中与空间和时间相关的资源条件。高通量培养技术[82]、代谢组学技术[83]和可视化技术[84]的进步也有望提高更复杂群落尺度下相互作用预测的准确性。(Pacheco and Vorholt 2023)\n值得注意的是，Borer 等人最近利用了这一技术组合，他们使用经过实验验证的四种特征良好菌株的基因组尺度模型来预测土壤细菌之间的群落组装和代谢交换(Borer, Kleyer, and Or 2022)。这项研究进一步突出了基因组尺度模型描述空间分辨环境中相互作用机制的能力，表明预测复杂环境中群落生态学的潜力越来越大。"
+  },
+  {
+    "objectID": "metabolic-model.html#sec-comets",
+    "href": "metabolic-model.html#sec-comets",
+    "title": "6  代谢模型",
+    "section": "6.2 COMETS",
+    "text": "6.2 COMETS\nCOMETS(Computation Of Microbial Ecosystems in Time and Space) is a software platform for performing computer simulations of spatially structured microbial communities. It is based on stoichiometric modeling of the genome-scale metabolic network of individual microbial species using dynamic flux balance analysis, and on a discrete approximation of diffusion. For more information, see Harcombe et al., Metabolic Resource Allocation in Individual Microbes Determines Ecosystem Interactions and Spatial Dynamics, Cell Reports, 2014.\n\n6.2.1 COMETS 软件特性\nCOMETS 的核心是通过迭代方式最大化目标反应（通常是生物量生产）来模拟微生物种群的生长。一个或多个物种的初始生物量（由其代谢模型定义）被播种到含有一系列指定营养物质的环境中。在每次迭代中，生物量和环境都会根据 FBA 预测进行更新。\n\n6.2.1.1 空间能力\nCOMETS 能够模拟空间结构环境中的微生物生长。这是通过将模拟空间（“世界”）划分为由较小空间组成的 “网格”来实现的。在每个空间内，生长被认为是充分混合的。随着模拟的进行，营养物质和生物量都可以传播到连续的空间。\n\n模拟二维和三维 “世界”\n除了混合良好的条件外，COMETS 还能模拟二维和三维空间结构环境。例如，可以模拟培养皿等二维表面上的菌落生长，或肿瘤、三维基质中的细菌菌落等三维结构。\n生物质在空间的扩散和对流传播\n在具有空间结构的模拟中，可以实现不同的生物质传播模式。扩散模式模拟的是自由游动细菌的传播，而对流模式模拟的是细菌相互推动的传播。这两种传播模式可以结合使用。\n取决于基质的营养物质和生物量传播\n营养物质的扩散性和生物质的传播特性取决于琼脂密度、细胞基质摩擦系数等基质特性。\n边界条件\n有两种边界条件。固定值和固定源或汇速率。\n\n\n\n6.2.1.2 生物功能\nCOMETS 具有许多有趣的生物功能，可用于完善和改进化学计量模型的预测，以及模拟不同类型的生物现实条件。\n\n微生物生长的滞后期\n滞后期是模拟菌落生长激活的模型。\n连续（恒温箱）和批量生长模式\n在恒温箱模式下，用户可控制营养液的补充速度。在批处理模式下，用户可控制稀释和频率。\n多物种群落模拟\n可在物种空间分布重叠或不重叠的情况下，或在混合良好的条件下，对两个或多个物种（最多可达数百个）进行模拟。\n解析性 dFBA\n通常，任何代谢模型都有多个最优解。在这些方案中进行选择的一种方法是假设细胞将通过代谢网络的总通量最小化。为此，解析式 FBA 首先优化目标函数，如生长。然后进行第二次优化，将生长量固定在之前获得的最佳水平，并使通过网络的总通量最小化。\n细胞死亡\n我们采用了一个简单的细胞死亡模型，并为每个物种分配了死亡率。\n中性种群漂移\n人口噪声的存在会导致模拟中不同物种丰度的随机变化。这在批量增长模式中尤其有用，因为稀释瓶颈会对增长中的种群产生重大影响。\n进化过程\nComets 支持进化模拟，包括模拟过程中的随机变异和漂移。目前，唯一可用的突变是反应删除。\n\n\n\n6.2.1.3 计算能力\nCOMETS 软件使用 JAVA 语言实现。因此，它具有很强的可移植性，不受操作系统的影响。COMETS 具有以下模拟功能。\n\n图形用户界面 (GUI)\n除命令行外，COMETS 仿真还可通过图形用户界面（包括可视化工具）运行。\n并行 dFBA\n在多 CPU 系统中以多线程进程方式运行，可获得更高的计算性能。\nMATLAB 工具箱\nMATLAB 工具箱，用于以编程方式修改 COMETS 的输入文件。\nPython 工具箱\nPython 工具箱，用于以编程方式修改 COMETS 的输入文件。"
+  },
+  {
+    "objectID": "metabolic-model.html#sec-the-dfbalab-model",
+    "href": "metabolic-model.html#sec-the-dfbalab-model",
+    "title": "6  代谢模型",
+    "section": "6.3 使用 DFBAlab",
+    "text": "6.3 使用 DFBAlab\nWrite a dFBA model\nDynamic flux balance analysis is an extension of FBA that has the advantage that it enables analysis of interactions between the metabolism and the environment. The structure of the dFBA model that is assumed here has the following elements:\n\nA flux balance model of each of the microorganisms.\nA list of external metabolites.\nDescription of the interaction between FBA models through uptake and production of external metabolites.\nThe dynamic equations that are integrated by DFBAlab.\n\n\nwhere \\(N\\) is the number of biological species and \\(M\\) is the number of extracellular chemical species. The variable \\(x_j\\) is the biomass concentration of the \\(j^{th}\\) metabolism, \\(s_i\\) is the extracellular concentration of the \\(i^{th}\\) chemical species, \\(F_{in} = \\sum_{i=1}^{M}F_{i} (t)\\) with \\(F_i\\) is the feed rate of chemical species \\(i\\), \\(D=\\sum_{i=1}^{M}F_i /V\\) is the dilution rate, \\(v_i^j\\) is the uptake or production rate of chemical species \\(i\\) due to species \\(j\\) and \\(V\\) is the volume of the bio-reactor. If the function \\(v_i^j\\) describes the production rate of the \\(i^{th}\\) external metabolite by the \\(j^{th}\\) metabolism, then its value can be determined by secondary optimization for the production rate.\nSetup the simulation\nThe simulation parameters are determined by the batch conditions of the experiments. A minimal set of parameter consists of\n\nThe (maximal) batch time.\nThe initial conditions for the biomass, substrates and total volume.\nDefinition of the external control inputs such as feed rate and composition and other environmental changes that are should be implemented during the batch.\nOptional definition of minimal growth conditions to determine when the simulation should stop prior to reaching the final batch time."
+  },
+  {
+    "objectID": "metabolic-model.html#community-simulator",
+    "href": "metabolic-model.html#community-simulator",
+    "title": "6  代谢模型",
+    "section": "6.4 Community Simulator",
+    "text": "6.4 Community Simulator\n\nCitation: Marsland R, Cui W, Goldford J, Mehta P (2020) The Community Simulator: A Python package for microbial ecology. PLoS ONE 15(3): e0230430. https://doi.org/10.1371/journal.pone.0230430\n\nCommunity Simulator is a Python package called Community Simulator for simulating microbial population dynamics in a reproducible, transparent and scalable way.\nThe Community Simulator includes five major elements: tools for preparing the initial states and environmental conditions for a set of samples, automatic generation of dynamical equations based on a dictionary of modeling assumptions, random parameter sampling with tunable levels of metabolic and taxonomic structure, parallel integration of the dynamical equations, and support for metacommunity dynamics with migration between samples.\nThis package is designed for simulating batch culture experiments on complex microbial communities. The architecture is based on the standard protocol for these experiments:\n\nAdd media to each of the wells in a 96-well plate. It could be the same media for all wells, or different media for each well, depending on what the experimenter is trying to test.\nAdd a small sample of an existing bacterial culture to each of the wells. Again, these could be the same for all wells, or different initial conditions could be tested in parallel.\nLet the bacteria grow while stirring or shaking for some fixed time T.\nPipette a small fraction of each of the wells into a well on a new plate, with fresh media (added according to the same protocol as in step 1).\nRepeat the previous two steps as many times as desired.\n\nCommunities can also be run in chemostat mode, where nutrients are continually supplied and populations continuously diluted.\n\n\n\n\nBorer, Benedict, Hannah Kleyer, and Dani Or. 2022. “Primary Carbon Sources and Self-Induced Metabolic Landscapes Shape Community Structure in Soil Bacterial Hotspots.” Soil Biology and Biochemistry 168 (May): 108620. https://doi.org/10.1016/j.soilbio.2022.108620.\n\n\nChen, Jin, Jose A. Gomez, Kai Höffner, Paul I. Barton, and Michael A. Henson. 2015. “Metabolic Modeling of Synthesis Gas Fermentation in Bubble Column Reactors.” Biotechnology for Biofuels 8 (1). https://doi.org/10.1186/s13068-015-0272-5.\n\n\nHarcombe, William R., William J. Riehl, Ilija Dukovski, Brian R. Granger, Alex Betts, Alex H. Lang, Gracia Bonilla, et al. 2014. “Metabolic Resource Allocation in Individual Microbes Determines Ecosystem Interactions and Spatial Dynamics.” Cell Reports 7 (4): 1104–15. https://doi.org/10.1016/j.celrep.2014.03.070.\n\n\nHenson, Michael A. 2015. “Genome-scale modelling of microbial metabolism with temporal and spatial resolution.” Biochemical Society Transactions 43 (6): 1164–71. https://doi.org/10.1042/BST20150146.\n\n\nPacheco, Alan R., and Julia A. Vorholt. 2023. “Resolving Metabolic Interaction Mechanisms in Plant Microbiomes.” Current Opinion in Microbiology 74 (August): 102317. https://doi.org/10.1016/j.mib.2023.102317."
+  },
+  {
+    "objectID": "metabolic-model.html#footnotes",
+    "href": "metabolic-model.html#footnotes",
+    "title": "6  代谢模型",
+    "section": "",
+    "text": "取消细胞内稳态假设需要结合酶动力学，更加困难。↩︎\n常微分方程与偏微分方程中独立变量的数量不同，ODEs（常微分方程）是描述一个独立变量的函数与其导数之间的关系的方程。这个独立变量通常是一维的，例如时间，因此ODEs描述的是一个变量随时间的变化。而 PDEs（偏微分方程）涉及多个独立变量。这些变量可以是多维空间中的位置坐标，因此PDEs描述的是多个变量在空间中的分布以及这些变量随时间的演化。↩︎\n该文章中详细描述了下载，仿真的过程。不过没有完整的代码，需要参考 COMETS 的手册自己编写。↩︎"
+  },
+  {
+    "objectID": "ecological-model.html#微分方程模型",
+    "href": "ecological-model.html#微分方程模型",
+    "title": "7  生态模型",
+    "section": "7.1 微分方程模型",
+    "text": "7.1 微分方程模型\n基于微分方程的生态模型可以预测基于物种共现或资源偏好和代谢交换的相互作用。与基于相关性的技术相比，这些模型可以提供强大的预测能力，因为它们可用于推断因果间关系和未来的群落动态。\nBansept 等人应用了微分方程模型，该模型考虑了微生物物种的双相生活方式，该模型由宿主相关相和环境相组成[62]。将这种建模框架扩展到群落环境中可能特别能提供与植物相关的微生物在其整个生命周期中经历不同的环境或时间定义的选择压力的信息。"
+  },
+  {
+    "objectID": "ecological-model.html#generalized-lotka-volterra-model",
+    "href": "ecological-model.html#generalized-lotka-volterra-model",
+    "title": "7  生态模型",
+    "section": "7.2 Generalized Lotka-Volterra Model",
+    "text": "7.2 Generalized Lotka-Volterra Model\n\n参考资料：\n\nhttps://github.com/yuhao-yang-cy/sci-simulations/blob/main/lotka-volterra-predator-prey-model.ipynb\n知乎专栏\nA Tour of the Generalized Lotka-Volterra Model：四个讲座半严谨地介绍了 gLV 模型及其在群落生态学中的应用。在这本电子书中，作者都加入了可用于模拟从数学角度介绍的过程的代码。source code。\nTheoretical Community Ecology：本资料是芝加哥大学 2020/2021 学年的理论群落生态学（ECEV 43900）研究生课程准备的（主讲人：Stefano Allesina ）。学习本教材需要熟悉微积分（多元积分、导数、链式法则）和线性代数（向量空间、特征值、特征向量）。此外，还需要具备良好的 R 工作知识（编写函数、使用 deSolve 和 tidyverse 软件包）。该课程以种群、群落和理论生态学课程中通常介绍的材料为基础，主要目标是建立一个解决理论群落生态学问题的工具箱，在入门课程和主要文献之间架起一座桥梁。source code\nMIT opencourse: Systems biologly - Interspecies interaction：本讲座由 Jeff Gore 教授主讲，内容涉及捕食者-猎物相互作用和振荡的模型和实验。他从 Lokta-Volterra 模型开始，该模型既被称为 “糟糕的”（从数学角度讲），又被称为 “意义深远的”。\n\n\n\n\n\nStefano Allesina\n\n\n洛特卡-沃尔泰拉模型（Lotka-Volterra 模型）是一种著名的描述捕食者和猎物之间相互作用的数学模型1，用于研究生态系统中的种群动态。它由意大利数学家洛特卡（Alfred Lotka）和法国数学家沃尔泰拉（Vito Volterra）分别在20世纪初提出，并且被广泛应用于生态学和数学生物学领域。该模型基于两个基本假设：1）猎物的增长受到非捕食者相关因素的影响（如资源供应、自然死亡率等）；2）捕食者的增长受到猎物的存在和捕食率的影响。\n\n\n\n捕食者与猎物\n\n\n在洛特卡-沃尔泰拉模型中，假设存在两个种群：猎物（Prey）和捕食者（Predator）。它的数学描述通常由一组耦合的微分方程表示，其中包括猎物种群的变化和捕食者种群的变化。模型的一般形式如下：\n猎物的增长模型（Prey dynamics）：\n\\[\\frac{dP}{dt} = rP - aP\\cdot C\\]\n其中，\\(P\\) 表示猎物种群的数量，\\(r\\) 是猎物的内禀增长率2，\\(a\\) 是猎物受到捕食者影响的捕食率，\\(C\\) 表示捕食者种群的数量。\n捕食者的增长模型（Predator dynamics）：\n\\[\\frac{dC}{dt} = -sC + bP\\cdot C\\]\n其中，\\(C\\) 表示捕食者种群的数量，\\(s\\) 是捕食者的死亡率3，\\(b\\) 是捕食者每捕食一单位猎物能够获得的增长量。\n洛特卡-沃尔泰拉模型可以产生一系列有趣的动态行为，包括周期性波动、稳定的周期、混沌等，取决于参数的设定。这个模型在理论上和定量分析上都提供了一种理解捕食和被捕食者之间相互作用的方式，但也有一些局限性，例如未考虑环境因素的变化和其他种群互动方式。\ngLV 模型（Generalized Lotka-Volterra Model）是对传统洛特卡-沃尔泰拉模型的扩展和泛化，用于描述多物种相互作用的复杂生态系统。与传统的捕食者-猎物模型不同，gLV 模型考虑了多个物种之间的相互关系，包括竞争、捕食、共生等各种相互作用。\ngLV 模型的数学描述可以根据涉及的物种数量和相互作用的类型而有所不同。这些模型通常使用耦合的微分方程来表示不同物种的种群动态。例如，假设我们有 \\(n\\) 个物种，可以表示如下：\n\\[\\frac{dN_i}{dt} = r_i N_i \\left(1 - \\sum_{j=1}^n a_{ij} N_j\\right)\\]\n其中，\\(N_i\\) 表示第 \\(i\\) 个物种的种群数量，\\(r_i\\) 是内禀增长率，\\(a_{ij}\\) 是描述物种 \\(i\\) 对物种 \\(j\\) 的影响系数。这些系数可以表示为竞争系数、捕食率、共生关系等等，取决于实际的生态系统研究。\ngLV 模型的一个重要应用是在生态系统的稳定性和动态行为分析。通过调整不同物种之间的相互作用系数，可以模拟和预测多种物种在生态系统中的相互作用和种群动态，以及可能出现的周期性波动、稳定状态、混沌等。\n这种模型在生态学和生物学的研究中具有重要意义，可以帮助我们更好地理解自然界中物种之间的复杂关系，同时也有助于环境保护和资源管理等领域的决策。然而，需要指出的是，由于现实生态系统的复杂性，gLV 模型通常是一种理想化简化，实际中的生态系统往往受到更多因素的影响。"
+  },
+  {
+    "objectID": "ecological-model.html#consumer-resource-model",
+    "href": "ecological-model.html#consumer-resource-model",
+    "title": "7  生态模型",
+    "section": "7.3 Consumer Resource Model",
+    "text": "7.3 Consumer Resource Model\n消费者资源模型根据已知或估计的资源吸收和转化率来预测生物体特定的增长率。这些可用于预测特定营养环境中的物种丰度、代谢相互作用和分类多样性。\n消费者资源模型[68]明确考虑了不同生物体如何响应特定环境营养物质而生长（图 ）。因此，它可以通过描述消耗、转化和交换特定资源的生态后果，为代谢相互作用提供额外的预测能力。消费者资源模型已经生成了不同生态尺度的代谢相互作用机制和群落多样性的预测[69 , 70]，并且最近已应用于理解植物微生物组中的跨界相互作用[26]。此外，消费者资源建模框架可以与体外培养实验探索微生物组如何响应环境扰动的代谢基础，正如最近对土壤分离物集合的描述[71]。"
+  },
+  {
+    "objectID": "ecological-model.html#resource-competition-model",
+    "href": "ecological-model.html#resource-competition-model",
+    "title": "7  生态模型",
+    "section": "7.4 Resource Competition Model",
+    "text": "7.4 Resource Competition Model\n\n\n\n\nPacheco, Alan R., and Julia A. Vorholt. 2023. “Resolving Metabolic Interaction Mechanisms in Plant Microbiomes.” Current Opinion in Microbiology 74 (August): 102317. https://doi.org/10.1016/j.mib.2023.102317."
+  },
+  {
+    "objectID": "ecological-model.html#footnotes",
+    "href": "ecological-model.html#footnotes",
+    "title": "7  生态模型",
+    "section": "",
+    "text": "因此也叫做”捕食者-猎物模型”。↩︎\n猎物在没有捕食者存在的情况下，会指数增长。↩︎\n捕食者没有猎物吃会死亡。↩︎"
+  },
+  {
+    "objectID": "glv-model.html#单物种群体",
+    "href": "glv-model.html#单物种群体",
+    "title": "8  gLV 模型",
+    "section": "8.1 单物种群体",
+    "text": "8.1 单物种群体\nThe simplest case to study is that of a single population, in which case the equation becomes that of the logistic growth:\n\\[\n\\dfrac{dx(t)}{dt} = x(t)(r + a x(t))\n\\]\nThis is a separable ODE, with solution:\n\\[\nx(t) = \\frac{r}{e^{-r \\left(k+t\\right)}-a}\n\\]\nwhere \\(k\\) is a constant. Setting \\(x(0) = x_0\\) (i.e., providing an initial condition), solving for the constant and substituting, we obtain:\n\\[\nx(t) = \\frac{r {x_0} e^{r t}}{r-a {x_0} \\left(e^{r t}-1\\right)}\n\\] As such, provided with the parameters \\(r\\) and \\(a\\), as well as an initial condition, we can determine the population size for any time \\(t\\). For example, in R:\n\npacman::p_load(\"deSolve\") # integrate ODEs\npacman::p_load(\"tidyverse\") # plotting and wrangling\n# define the differential equation\nlogistic_growth &lt;- function(t, x, parameters){\n  with(as.list(c(x, parameters)), {\n    dxdt &lt;- x * (r + a * x)\n    list(dxdt)\n  })\n}\n# define parameters, integration time, initial conditions\ntimes &lt;- seq(0, 100, by = 5)\nx0 &lt;- 0.05\nr &lt;- 0.1\na &lt;- -0.05\nparameters &lt;- list(r = r, a = a)\n# solve numerically\nout &lt;- ode(y = x0, times = times, \n           func = logistic_growth, parms = parameters, \n           method = \"ode45\")\n# now compute analytically\nsolution &lt;- r * x0 * exp(r * times) / (r - a * x0 * (exp(r * times) - 1))\n# use ggplot to plot\nres &lt;- tibble(time = out[,1], x_t = out[,2], x_sol = solution)\nggplot(data = res) + aes(x = time, y = x_t) + \n  geom_line() + \n  geom_point(aes(x = time, y = x_sol), colour = \"red\", shape = 2) + \n  ylab(expression(\"x(t)\")) + xlab(expression(\"t\"))\n\n\n\n\nIf \\(a &lt; 0\\) and \\(r &gt; 0\\), the population started at any positive value eventually reaches an equilibrium, which we can find by setting \\(dx(t)/dt = 0\\) and considering \\(x \\neq 0\\):\n\\[\n(r + a x) = 0 \\to x = -\\frac{r}{a}\n\\]"
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "参考文献",
+    "section": "",
+    "text": "Borer, Benedict, Hannah Kleyer, and Dani Or. 2022. “Primary Carbon\nSources and Self-Induced Metabolic Landscapes Shape Community Structure\nin Soil Bacterial Hotspots.” Soil Biology and\nBiochemistry 168 (May): 108620. https://doi.org/10.1016/j.soilbio.2022.108620.\n\n\nChen, Jin, Jose A. Gomez, Kai Höffner, Paul I. Barton, and Michael A.\nHenson. 2015. “Metabolic Modeling of Synthesis Gas Fermentation in\nBubble Column Reactors.” Biotechnology for Biofuels 8\n(1). https://doi.org/10.1186/s13068-015-0272-5.\n\n\nHarcombe, William R., William J. Riehl, Ilija Dukovski, Brian R.\nGranger, Alex Betts, Alex H. Lang, Gracia Bonilla, et al. 2014.\n“Metabolic Resource Allocation in Individual Microbes Determines\nEcosystem Interactions and Spatial Dynamics.” Cell\nReports 7 (4): 1104–15. https://doi.org/10.1016/j.celrep.2014.03.070.\n\n\nHenson, Michael A. 2015. “Genome-scale modelling of microbial\nmetabolism with temporal and spatial resolution.” Biochemical\nSociety Transactions 43 (6): 1164–71. https://doi.org/10.1042/BST20150146.\n\n\nPacheco, Alan R., and Julia A. Vorholt. 2023. “Resolving Metabolic\nInteraction Mechanisms in Plant Microbiomes.” Current Opinion\nin Microbiology 74 (August): 102317. https://doi.org/10.1016/j.mib.2023.102317."
+  }
+]

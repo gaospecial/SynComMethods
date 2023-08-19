@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.353">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>SynComMethods - 7&nbsp; 生态模型</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./glv-model.html" rel="next">
+<link href="./metabolic-model.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ecological-model.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">生态模型</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">SynComMethods</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./write-math-equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">书写数学公式</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./write-chemical-equation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">书写化学反应式</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./technical-writing-with-quarto.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Quarto 常用文档元素</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./strain-and-combination.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">菌株和组合方式</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./culture-method.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">培养方法</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./metabolic-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">代谢模型</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ecological-model.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">生态模型</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./glv-model.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">gLV 模型</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">参考文献</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#微分方程模型" id="toc-微分方程模型" class="nav-link active" data-scroll-target="#微分方程模型"><span class="header-section-number">7.1</span> 微分方程模型</a></li>
+  <li><a href="#generalized-lotka-volterra-model" id="toc-generalized-lotka-volterra-model" class="nav-link" data-scroll-target="#generalized-lotka-volterra-model"><span class="header-section-number">7.2</span> Generalized Lotka-Volterra Model</a></li>
+  <li><a href="#consumer-resource-model" id="toc-consumer-resource-model" class="nav-link" data-scroll-target="#consumer-resource-model"><span class="header-section-number">7.3</span> Consumer Resource Model</a></li>
+  <li><a href="#resource-competition-model" id="toc-resource-competition-model" class="nav-link" data-scroll-target="#resource-competition-model"><span class="header-section-number">7.4</span> Resource Competition Model</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="ecological-model" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">生态模型</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://vnote-1251564393.cos.ap-chengdu.myqcloud.com/20230810184629.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">几种常用的代谢和生态模型 <span class="citation" data-cites="pachecoResolvingMetabolicInteraction2023">(<a href="references.html#ref-pachecoResolvingMetabolicInteraction2023" role="doc-biblioref">Pacheco and Vorholt 2023</a>)</span></figcaption>
+</figure>
+</div>
+</div>
+</div>
+<section id="微分方程模型" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="微分方程模型"><span class="header-section-number">7.1</span> 微分方程模型</h2>
+<p>基于微分方程的生态模型可以预测基于物种共现或资源偏好和代谢交换的相互作用。与基于相关性的技术相比，这些模型可以提供强大的预测能力，因为它们可用于推断因果间关系和未来的群落动态。</p>
+<p>Bansept 等人应用了微分方程模型，该模型考虑了微生物物种的双相生活方式，该模型由宿主相关相和环境相组成[62]。将这种建模框架扩展到群落环境中可能特别能提供与植物相关的微生物在其整个生命周期中经历不同的环境或时间定义的选择压力的信息。</p>
+</section>
+<section id="generalized-lotka-volterra-model" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="generalized-lotka-volterra-model"><span class="header-section-number">7.2</span> Generalized Lotka-Volterra Model</h2>
+<blockquote class="blockquote">
+<p><strong>参考资料</strong>：</p>
+<ul>
+<li><p><a href="https://github.com/yuhao-yang-cy/sci-simulations/blob/main/lotka-volterra-predator-prey-model.ipynb" class="uri">https://github.com/yuhao-yang-cy/sci-simulations/blob/main/lotka-volterra-predator-prey-model.ipynb</a></p></li>
+<li><p><a href="https://zhuanlan.zhihu.com/p/413164717">知乎专栏</a></p></li>
+<li><p><a href="https://stefanoallesina.github.io/Sao_Paulo_School/">A Tour of the Generalized Lotka-Volterra Model</a>：四个讲座半严谨地介绍了 gLV 模型及其在群落生态学中的应用。在这本电子书中，作者都加入了可用于模拟从数学角度介绍的过程的代码。<a href="https://github.com/StefanoAllesina/Sao_Paulo_School">source code</a>。</p></li>
+<li><p><a href="https://stefanoallesina.github.io/Theoretical_Community_Ecology/">Theoretical Community Ecology</a>：本资料是芝加哥大学 2020/2021 学年的理论群落生态学（ECEV 43900）研究生课程准备的（主讲人：<a href="https://stefanoallesina.github.io/">Stefano Allesina</a> ）。学习本教材需要熟悉微积分（多元积分、导数、链式法则）和线性代数（向量空间、特征值、特征向量）。此外，还需要具备良好的 R 工作知识（编写函数、使用 deSolve 和 tidyverse 软件包）。该课程以种群、群落和理论生态学课程中通常介绍的材料为基础，主要目标是建立一个解决理论群落生态学问题的工具箱，在入门课程和主要文献之间架起一座桥梁。<a href="https://github.com/StefanoAllesina/Theoretical_Community_Ecology">source code</a></p></li>
+<li><p><a href="https://ocw.mit.edu/courses/8-591j-systems-biology-fall-2014/resources/interspecies-interactions/">MIT opencourse: Systems biologly - Interspecies interaction</a>：本讲座由 Jeff Gore 教授主讲，内容涉及捕食者-猎物相互作用和振荡的模型和实验。他从 Lokta-Volterra 模型开始，该模型既被称为 “糟糕的”（从数学角度讲），又被称为 “意义深远的”。</p></li>
+</ul>
+</blockquote>
+<div class="quarto-figure quarto-figure-right">
+<figure class="figure">
+<p><img src="https://profiles.uchicago.edu/profiles/profile/Modules/CustomViewPersonGeneralInfo/PhotoHandler.ashx?NodeID=36947&amp;cachekey=c2a4884b-92da-42e3-a299-6a14fe861a47" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Stefano Allesina</figcaption>
+</figure>
+</div>
+<p>洛特卡-沃尔泰拉模型（Lotka-Volterra 模型）是一种著名的描述捕食者和猎物之间相互作用的数学模型<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>，用于研究生态系统中的种群动态。它由意大利数学家洛特卡（Alfred Lotka）和法国数学家沃尔泰拉（Vito Volterra）分别在20世纪初提出，并且被广泛应用于生态学和数学生物学领域。该模型基于两个基本假设：1）猎物的增长受到非捕食者相关因素的影响（如资源供应、自然死亡率等）；2）捕食者的增长受到猎物的存在和捕食率的影响。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://pic1.zhimg.com/70/v2-e8130abf786d76cd71348ba4666db772_1440w.avis?source=172ae18b&amp;biz_tag=Post" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">捕食者与猎物</figcaption>
+</figure>
+</div>
+<p>在洛特卡-沃尔泰拉模型中，假设存在两个种群：猎物（Prey）和捕食者（Predator）。它的数学描述通常由一组耦合的微分方程表示，其中包括猎物种群的变化和捕食者种群的变化。模型的一般形式如下：</p>
+<p><strong>猎物的增长模型</strong>（Prey dynamics）：</p>
+<p><span class="math display">\[\frac{dP}{dt} = rP - aP\cdot C\]</span></p>
+<p>其中，<span class="math inline">\(P\)</span> 表示猎物种群的数量，<span class="math inline">\(r\)</span> 是猎物的内禀增长率<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>，<span class="math inline">\(a\)</span> 是猎物受到捕食者影响的捕食率，<span class="math inline">\(C\)</span> 表示捕食者种群的数量。</p>
+<p><strong>捕食者的增长模型</strong>（Predator dynamics）：</p>
+<p><span class="math display">\[\frac{dC}{dt} = -sC + bP\cdot C\]</span></p>
+<p>其中，<span class="math inline">\(C\)</span> 表示捕食者种群的数量，<span class="math inline">\(s\)</span> 是捕食者的死亡率<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>，<span class="math inline">\(b\)</span> 是捕食者每捕食一单位猎物能够获得的增长量。</p>
+<p>洛特卡-沃尔泰拉模型可以产生一系列有趣的动态行为，包括周期性波动、稳定的周期、混沌等，取决于参数的设定。这个模型在理论上和定量分析上都提供了一种理解捕食和被捕食者之间相互作用的方式，但也有一些局限性，例如未考虑环境因素的变化和其他种群互动方式。</p>
+<p>gLV 模型（Generalized Lotka-Volterra Model）是对传统洛特卡-沃尔泰拉模型的扩展和泛化，用于描述多物种相互作用的复杂生态系统。与传统的捕食者-猎物模型不同，gLV 模型考虑了多个物种之间的相互关系，包括竞争、捕食、共生等各种相互作用。</p>
+<p>gLV 模型的数学描述可以根据涉及的物种数量和相互作用的类型而有所不同。这些模型通常使用耦合的微分方程来表示不同物种的种群动态。例如，假设我们有 <span class="math inline">\(n\)</span> 个物种，可以表示如下：</p>
+<p><span class="math display">\[\frac{dN_i}{dt} = r_i N_i \left(1 - \sum_{j=1}^n a_{ij} N_j\right)\]</span></p>
+<p>其中，<span class="math inline">\(N_i\)</span> 表示第 <span class="math inline">\(i\)</span> 个物种的种群数量，<span class="math inline">\(r_i\)</span> 是内禀增长率，<span class="math inline">\(a_{ij}\)</span> 是描述物种 <span class="math inline">\(i\)</span> 对物种 <span class="math inline">\(j\)</span> 的影响系数。这些系数可以表示为竞争系数、捕食率、共生关系等等，取决于实际的生态系统研究。</p>
+<p>gLV 模型的一个重要应用是在生态系统的稳定性和动态行为分析。通过调整不同物种之间的相互作用系数，可以模拟和预测多种物种在生态系统中的相互作用和种群动态，以及可能出现的周期性波动、稳定状态、混沌等。</p>
+<p>这种模型在生态学和生物学的研究中具有重要意义，可以帮助我们更好地理解自然界中物种之间的复杂关系，同时也有助于环境保护和资源管理等领域的决策。然而，需要指出的是，由于现实生态系统的复杂性，gLV 模型通常是一种理想化简化，实际中的生态系统往往受到更多因素的影响。</p>
+</section>
+<section id="consumer-resource-model" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="consumer-resource-model"><span class="header-section-number">7.3</span> Consumer Resource Model</h2>
+<p>消费者资源模型根据已知或估计的资源吸收和转化率来预测生物体特定的增长率。这些可用于预测特定营养环境中的物种丰度、代谢相互作用和分类多样性。</p>
+<p>消费者资源模型[68]明确考虑了不同生物体如何响应特定环境营养物质而生长（图 ）。因此，它可以通过描述消耗、转化和交换特定资源的生态后果，为代谢相互作用提供额外的预测能力。消费者资源模型已经生成了不同生态尺度的代谢相互作用机制和群落多样性的预测[69 , 70]，并且最近已应用于理解植物微生物组中的跨界相互作用[26]。此外，消费者资源建模框架可以与体外培养实验探索微生物组如何响应环境扰动的代谢基础，正如最近对土壤分离物集合的描述[71]。</p>
+</section>
+<section id="resource-competition-model" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="resource-competition-model"><span class="header-section-number">7.4</span> Resource Competition Model</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
+<div id="ref-pachecoResolvingMetabolicInteraction2023" class="csl-entry" role="listitem">
+Pacheco, Alan R., and Julia A. Vorholt. 2023. <span>“Resolving Metabolic Interaction Mechanisms in Plant Microbiomes.”</span> <em>Current Opinion in Microbiology</em> 74 (August): 102317. <a href="https://doi.org/10.1016/j.mib.2023.102317">https://doi.org/10.1016/j.mib.2023.102317</a>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>因此也叫做”捕食者-猎物模型”。<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>猎物在没有捕食者存在的情况下，会指数增长。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>捕食者没有猎物吃会死亡。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./metabolic-model.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">代谢模型</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./glv-model.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">gLV 模型</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+
+</body></html>
